@@ -11,7 +11,7 @@
             <img src="../../../assets/img/thai-nguyen-AtYWWis5ZDM-unsplash.jpg" alt="iphone image" />
         </div>
         <h3>IPHONE 15 PRO MAX</h3>
-        <select id="chances" class="botonChances">
+        <select id="chances" class="botonChances" name="chances" [(ngModel)]="usuarioRegister.chances">
             <option value="1">COMPRAR 1 CHANCE</option>
             <option value="5">COMPRAR 5 CHANCES</option>
             <option value="10">COMPRAR 10 CHANCES</option>
@@ -33,11 +33,11 @@
         <div class="contacto">
             <form id="info_de_contacto">
                 <label>Correo electrónico (obligatorio)</label>
-                <input type="email" id="email" />
+                <input type="email" id="email" name="email" [(ngModel)]="usuarioRegister.email" required/>
                 <label>Instagram (obligatorio)</label>
-                <input type="text" id="instagram" name="instagram" required />
-                <button id="footer-button">ENVIAR</button>
-                <div id="mensaje_de_respuesta"></div>
+                <input type="text" id="instagram" name="instagram" [(ngModel)]="usuarioRegister.instagram" required />
+                <button id="footer-button" (click)="register()">ENVIAR</button>
+                <div id="mensaje_de_respuesta">{{message}}</div>
             </form>
         </div>
     </section>
