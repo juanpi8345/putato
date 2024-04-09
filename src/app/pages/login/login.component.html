@@ -1,0 +1,12 @@
+<app-navbar></app-navbar>
+<form id="info_de_contacto">
+    <label>Nombre de usuario</label>
+    <input type="text" id="user" name="user" required [(ngModel)]="adminLogin.username"/>
+    <label>Contraseña</label>
+    <input type="password" id="password" name="password" required [(ngModel)]="adminLogin.password" />
+    <button id="footer-button" (click)="login()">LOGIN</button>
+    <div id="mensaje_de_respuesta">
+        <h4></h4>
+    </div>
+</form>
+<app-footer></app-footer>
