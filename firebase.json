@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "dist/putato",
+    "public": "dist/putato/browser",
     "ignore": [
       "firebase.json",
       "**/.*",
