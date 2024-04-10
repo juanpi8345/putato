@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { UsuarioRegister } from '../../model/usuario-register';
 import { UserServiceService } from '../../services/user-service.service';
-import Swal from 'sweetalert2';
 import { CommonModule } from '@angular/common';
 
 @Component({
