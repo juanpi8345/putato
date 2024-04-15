@@ -2,15 +2,17 @@
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
+  cursor: default;
 }
 html {
   background-color: #ffec24;
-  font-size: 63.5%;
+  font-size: 62.5%;
   font-family: "Space Mono", monospace;
   font-optical-sizing: auto;
   font-style: normal;
   width: 100vw;
 }
+
 .wave {
   width: 100vw;
 }
@@ -74,7 +76,7 @@ li {
   width: 114px;
 }
 h1 {
-  font-size: 4.5rem;
+  font-size: 4rem;
   font-weight: 800;
   letter-spacing: 0.1rem;
   word-spacing: 1rem;
@@ -146,20 +148,21 @@ button {
 }
 label {
   font-size: 1.6rem;
-
   padding: 4px 0px;
 }
 button {
-  background-color: transparent;
+  background-color: #0d0c1d;
+  color: #a2aebb;
   font-family: inherit;
   font-size: 2rem;
-  width: 100%;
-  padding: 0% 2%;
+  width: 70%;
+  padding: 0.3em;
   margin-top: 4%;
+  align-self: center;
 }
 footer {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   flex-direction: column;
   height: 100vh;
   padding-top: 10%;
@@ -174,6 +177,20 @@ footer a {
 a {
   color: black;
   text-decoration: none;
+}
+a:hover {
+  color: #a2aebb;
+}
+button:hover,
+input:hover {
+  cursor: pointer;
+}
+input {
+  box-shadow: 1px 1px #a2aebb;
+}
+
+#mensaje_de_respuesta {
+  font-size: 1.3rem;
 }
 
 .redes_sociales {
