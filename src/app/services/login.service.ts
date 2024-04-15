@@ -17,12 +17,12 @@ export class LoginService {
   }
 
   //Localstorage
-  public setAdmin(AdminLogin:AdminLogin){
-    localStorage.setItem("admin",JSON.stringify(AdminLogin));
+  public setAdmin(adminLogin:AdminLogin){
+    localStorage.setItem("admin",JSON.stringify(adminLogin));
   }
 
-  public getAdmin(){
-    return localStorage.getItem("admin");
+  public getAdmin():any{
+    return JSON.parse(localStorage.getItem("admin"));
   }
 
   public logout():void{
