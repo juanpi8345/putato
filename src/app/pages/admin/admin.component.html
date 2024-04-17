@@ -1,4 +1,25 @@
 <app-navbar></app-navbar>
 <!-- Will be soon... -->
-<h1>Pagina de administrador</h1>
+<div class="cambiar-titulo">
+  <label>Cambiar titulo del sorteo</label>
+  <input
+    type="text"
+    id="titulo-nuevo"
+    name="titulo-nuevo"
+    requires
+    [(ngModel)]="raffle.name"
+  />
+</div>
+<div class="subir-foto">
+  <label>Subir foto nueva</label>
+  <input
+    type="url"
+    id="foto-nueva"
+    name="foto-nueva"
+    required
+    [(ngModel)]="raffle.urlImage"
+  />
+</div>
+<div class="realizar-sorteo"></div>
+<div class="ver-participantes"></div>
 <app-footer></app-footer>
