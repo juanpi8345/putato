@@ -14,5 +14,7 @@ import { FormsModule } from '@angular/forms';
 })
 export class AdminComponent {
   raffle: Raffle = new Raffle();
+
   constructor(private adminService: AdminService) {}
 }
+//acá hay que ejecutar funciones creadas en el admin.service
