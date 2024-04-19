@@ -1,33 +1,50 @@
-<main>
-    <section class="landing">
-        <h1>
-            EL MAYOR BIEN QUE PODEMOS HACER POR LOS DEMÁS NO ES SOLO COMPARTIR
-            NUESTRAS RIQUEZAS, SINO MOSTRARLES SUS PROPIAS CAPACIDADES
-        </h1>
-        <h2>Participa del sorteo:</h2>
-    </section>
-    <section class="compras">
-        <h3>IPHONE 15 PRO MAX</h3>
-        <div class="image">
-            <img src="../../../assets/img/foto_sorteo.jpg" alt="iphone image" />
+<main class="fadeIn">
+  <section class="landing">
+    <h1>
+      EL MAYOR BIEN QUE PODEMOS HACER POR LOS DEMÁS NO ES SOLO COMPARTIR
+      NUESTRAS RIQUEZAS, SINO MOSTRARLES SUS PROPIAS CAPACIDADES
+    </h1>
+    <h2>Participa del sorteo:</h2>
+  </section>
+  <section class="compras">
+    <h3>IPHONE 15 PRO MAX</h3>
+    <div class="image">
+      <img src="../../../assets/img/foto_sorteo.jpg" alt="iphone image" />
+    </div>
+    <div class="contacto">
+      <form id="info_de_contacto">
+        <label>Correo (obligatorio)</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          required
+          [(ngModel)]="usuarioRegister.email"
+        />
+        <label>Instagram (obligatorio)</label>
+        <input
+          type="text"
+          id="instagram"
+          name="instagram"
+          required
+          [(ngModel)]="usuarioRegister.instagram"
+        />
+        <label>Chances</label>
+        <select
+          id="chances"
+          class="botonChances"
+          name="chances"
+          [(ngModel)]="usuarioRegister.chances"
+        >
+          <option value="1">1 CHANCE</option>
+          <option value="5">5 CHANCES</option>
+          <option value="10">10 CHANCES</option>
+        </select>
+        <button id="footer-button" (click)="register()">COMPRAR</button>
+        <div id="mensaje_de_respuesta">
+          <h4 [ngClass]="{ green: responseStatus == 200 }">{{ message }}</h4>
         </div>
-        <div class="contacto">
-            <form id="info_de_contacto">
-                <label>Correo (obligatorio)</label>
-                <input type="email" id="email" name="email" required [(ngModel)]="usuarioRegister.email"/>
-                <label>Instagram (obligatorio)</label>
-                <input type="text" id="instagram" name="instagram" required [(ngModel)]="usuarioRegister.instagram" />
-                <label>Chances</label>
-                <select id="chances" class="botonChances" name="chances" [(ngModel)]="usuarioRegister.chances">
-                    <option value="1">1 CHANCE</option>
-                    <option value="5">5 CHANCES</option>
-                    <option value="10">10 CHANCES</option>
-                </select>
-                <button id="footer-button" (click)="register()">COMPRAR</button>
-                <div id="mensaje_de_respuesta">
-                    <h4 [ngClass]="{'green':responseStatus == 200}">{{message}}</h4>
-                </div>
-            </form>
-        </div>
-    </section>
+      </form>
+    </div>
+  </section>
 </main>

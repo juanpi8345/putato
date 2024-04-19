@@ -1,4 +1,33 @@
-<app-navbar></app-navbar>
-<!-- Will be soon... -->
-<h1>Pagina de administrador</h1>
-<app-footer></app-footer>
+<!-- <app-navbar></app-navbar> -->
+<div class="admin-page fadeIn">
+  <h1>ADMINISTRADOR</h1>
+  <!--Formulario para administrar frontend-->
+  <div class="renderizar">
+    <div class="cambiar-titulo">
+      <label>NUEVO TITULO</label>
+      <input
+        type="text"
+        id="titulo-nuevo"
+        name="titulo-nuevo"
+        requires
+        [(ngModel)]="raffle.name"
+      />
+    </div>
+    <div class="subir-foto">
+      <label>NUEVA FOTO (URL)</label>
+      <input
+        type="url"
+        id="foto-nueva"
+        name="foto-nueva"
+        required
+        [(ngModel)]="raffle.urlImage"
+      />
+    </div>
+    <!--¿Necesita un botón para enviarse la data?-->
+  </div>
+  <div class="realizar-sorteo">
+    <button (click)="addRaffle()">MODIFICAR SORTEO</button>
+  </div>
+  <div class="ver-participantes"></div>
+</div>
+<!-- <app-footer></app-footer> -->

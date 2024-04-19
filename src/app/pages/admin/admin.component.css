@@ -1,0 +1,36 @@
+* {
+  padding: 0px;
+  margin: 0px;
+}
+.admin-page {
+  color: white;
+  background-color: #1a1a1a;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  /*esto despues hay que borrarlo porque es poco funcional, pero lo puse para que se vea mejor mientras trabajamos*/
+  height: 100vh;
+}
+h1 {
+  text-align: start;
+  padding: 0.5rem;
+  border-bottom: 1px solid #ffec24;
+  width: 100vw;
+}
+button,
+input {
+  color: #1a1a1a;
+  background-color: white;
+  width: auto;
+  padding: 0.4rem;
+}
+
+label {
+  padding: 0rem 0.7rem;
+}
+.renderizar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 10rem 0.5rem;
+}
