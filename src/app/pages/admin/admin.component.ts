@@ -18,14 +18,22 @@ export class AdminComponent {
   constructor(private adminService: AdminService) {}
   //acá hay que ejecutar funciones creadas en el admin.service
   addRaffle() {
-    this.adminService.makeRaffle().subscribe(
+    this.adminService.addRaffle(this.raffle).subscribe(
       (response) => {
         console.log('Se ha generado la rifa');
-        alert('La rifa se ha generado correctamente');
       },
       (error) => {
         console.log('Error al generar la rifa');
-        alert('Ocurrió un error al generar la rifa');
+      }
+    );
+  }
+  makeRaffle() {
+    this.adminService.makeRaffle().subscribe(
+      (response) => {
+        console.log('Se realizó el sorteo');
+      },
+      (error) => {
+        console.log('Error al sortear');
       }
     );
   }
