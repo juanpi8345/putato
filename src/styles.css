@@ -191,7 +191,7 @@ footer {
 }
 
 footer h2 {
-  font-size: 35rem;
+  font-size: 40rem;
 }
 
 footer a {
@@ -237,7 +237,7 @@ input {
     opacity: 0;
   }
 
-  100%{
+  100% {
     opacity: 1;
   }
 }

@@ -16,5 +16,17 @@ export class AdminComponent {
   raffle: Raffle = new Raffle();
 
   constructor(private adminService: AdminService) {}
+  //acá hay que ejecutar funciones creadas en el admin.service
+  addRaffle() {
+    this.adminService.makeRaffle().subscribe(
+      (response) => {
+        console.log('Se ha generado la rifa');
+        alert('La rifa se ha generado correctamente');
+      },
+      (error) => {
+        console.log('Error al generar la rifa');
+        alert('Ocurrió un error al generar la rifa');
+      }
+    );
+  }
 }
-//acá hay que ejecutar funciones creadas en el admin.service
