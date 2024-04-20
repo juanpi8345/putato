@@ -184,14 +184,14 @@ button {
 
 footer {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   flex-direction: column;
-  height: 100vh;
-  padding-top: 10%;
+  height: auto;
+  padding-top: 8%;
 }
 
 footer h2 {
-  font-size: 40rem;
+  font-size: 38rem;
 }
 
 footer a {

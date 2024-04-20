@@ -20,7 +20,7 @@ export class AdminComponent {
   addRaffle() {
     this.adminService.addRaffle(this.raffle).subscribe(
       (response) => {
-        console.log('Se ha generado la rifa');
+        console.log(response);
       },
       (error) => {
         console.log('Error al generar la rifa');
@@ -30,11 +30,16 @@ export class AdminComponent {
   makeRaffle() {
     this.adminService.makeRaffle().subscribe(
       (response) => {
-        console.log('Se realizó el sorteo');
+        console.log(response);
       },
       (error) => {
         console.log('Error al sortear');
       }
     );
+  }
+  getRaffleUsers() {
+    this.adminService.getRaffleUsers().subscribe((response) => {
+      console.log(response);
+    });
   }
 }

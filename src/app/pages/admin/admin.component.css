@@ -1,34 +1,41 @@
 * {
   padding: 0px;
   margin: 0px;
+  box-sizing: border-box;
 }
 .admin-page {
-  color: white;
-  background-color: #1a1a1a;
   display: flex;
+  align-items: center;
+  justify-content: space-around;
   padding: 10px;
-  /*esto despues hay que borrarlo porque es poco funcional, pero lo puse para que se vea mejor mientras trabajamos*/
-  height: 100vh;
 }
-h1 {
-  text-align: start;
-  padding: 0.5rem;
-}
-button,
 input {
+  box-shadow: none;
+  background-color: inherit;
   color: #1a1a1a;
-  background-color: white;
+  border: 1px solid #1a1a1a;
+}
+button {
+  background-color: #313131;
+  color: white;
   width: auto;
-  padding: 0.4rem;
+  font-size: 1.4rem;
 }
-
-label {
-  padding: 0rem 0.7rem;
+h2 {
+  font-weight: 400;
+  font-size: 1.6rem;
+  text-align: start;
 }
-.renderizar {
+form {
+  width: 30%;
+}
+form,
+div {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-  padding: 10rem 0.5rem;
-  width: auto;
+  justify-content: space-between;
+  padding: 2%;
+}
+label {
+  padding: 0rem 0.7rem;
 }

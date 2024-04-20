@@ -9,25 +9,25 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [FooterComponent,NavbarComponent,FormsModule],
+  imports: [FooterComponent, NavbarComponent, FormsModule],
   templateUrl: './login.component.html',
-  styleUrl: './login.component.css'
+  styleUrl: './login.component.css',
 })
 export class LoginComponent {
-    adminLogin:AdminLogin = new AdminLogin();
+  adminLogin: AdminLogin = new AdminLogin();
 
-    constructor(private loginService:LoginService,
-                private router:Router
-    ){}
+  constructor(private loginService: LoginService, private router: Router) {}
 
-    ngOnInit(){
-      console.log(this.loginService.isLoggedIn());
-    }
+  ngOnInit() {
+    console.log(this.loginService.isLoggedIn());
+  }
 
-    login(){
-       this.loginService.login(this.adminLogin).subscribe((adminLogin:AdminLogin)=>{
-          this.loginService.setAdmin(adminLogin);
-          this.router.navigate(['/admin']);
-       })
-    }
+  login() {
+    this.loginService
+      .login(this.adminLogin)
+      .subscribe((adminLogin: AdminLogin) => {
+        this.loginService.setAdmin(adminLogin);
+        this.router.navigate(['/admin']);
+      });
+  }
 }

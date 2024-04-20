@@ -1,34 +1,32 @@
-<!-- <app-navbar></app-navbar> -->
-<h1>ADMINISTRADOR</h1>
-<div class="admin-page fadeIn">
-  <!--Formulario para administrar frontend-->
+<!-- <h1>ADMINISTRADOR</h1> -->
+<section class="admin-page fadeIn">
   <form class="renderizar">
-    <div class="cambiar-titulo">
-      <label>NUEVO TITULO</label>
-      <input
-        type="text"
-        id="titulo-nuevo"
-        name="titulo-nuevo"
-        requires
-        [(ngModel)]="raffle.name"
-      />
-    </div>
-    <div class="subir-foto">
-      <label>NUEVA FOTO (URL)</label>
-      <input
-        type="url"
-        id="foto-nueva"
-        name="foto-nueva"
-        required
-        [(ngModel)]="raffle.urlImage"
-      />
-    </div>
-    <!--Botón para enviar la data-->
-    <button (click)="addRaffle()">MODIFICAR PAGINA</button>
+    <h2>Modificar sorteo</h2>
+    <label>NUEVO TITULO</label>
+    <input
+      type="text"
+      id="titulo-nuevo"
+      name="titulo-nuevo"
+      requires
+      [(ngModel)]="raffle.name"
+    />
+    <label>NUEVA FOTO (URL)</label>
+    <input
+      type="url"
+      id="foto-nueva"
+      name="foto-nueva"
+      required
+      [(ngModel)]="raffle.urlImage"
+    />
+    <button (click)="addRaffle()">Aceptar</button>
   </form>
+
   <div class="realizar-sorteo">
-    <button (click)="makeRaffle()">SORTEAR</button>
+    <h2>Sortear</h2>
+    <button (click)="makeRaffle()">Ir</button>
   </div>
-  <div class="ver-participantes"></div>
-</div>
-<!-- <app-footer></app-footer> -->
+  <div class="ver-participantes">
+    <h2>Ver antiguos participantes</h2>
+    <button (click)="getRaffleUsers()">Ir</button>
+  </div>
+</section>
