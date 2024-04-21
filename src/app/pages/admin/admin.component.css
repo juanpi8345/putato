@@ -39,3 +39,7 @@ div {
 label {
   padding: 0rem 0.7rem;
 }
+ul {
+  display: flex;
+  flex-direction: column;
+}

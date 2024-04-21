@@ -1,5 +1,36 @@
 <!-- <h1>ADMINISTRADOR</h1> -->
+<section class="landing">
+  <h1>
+    EL MAYOR BIEN QUE PODEMOS HACER POR LOS DEMÁS NO ES SOLO COMPARTIR NUESTRAS
+    RIQUEZAS, SINO MOSTRARLES SUS PROPIAS CAPACIDADES
+  </h1>
+</section>
+<section class="compras">
+  <!-- <h3>{{ raffle.name }}</h3> -->
+  <h3>IPHONE 15 PRO MAX</h3>
+  <div class="image">
+    <img src="../../../assets/img/foto_sorteo.jpg" alt="iphone image" />
+    <!-- <img [src]="raffle.urlImage" /> -->
+  </div>
+</section>
 <section class="admin-page fadeIn">
+  <div class="realizar-sorteo">
+    <h2>Sortear</h2>
+    <button (click)="makeRaffle()">IR</button>
+    <p>email del ganador: {{ ganador.emailWinner }}</p>
+    <p>instagram del ganador: {{ ganador.instagramWinner }}</p>
+    <p>sorteo ganado: {{ ganador.raffleName }}</p>
+  </div>
+  <div class="ver-participantes">
+    <h2>Ver participantes</h2>
+    <ul>
+      <li *ngFor="let participante of participantes">
+        <p>Email: {{ participante.email }}</p>
+        <p>Instagram: {{ participante.instagram }}</p>
+      </li>
+    </ul>
+    <button (click)="getRaffleUsers()">VER</button>
+  </div>
   <form class="renderizar">
     <h2>Modificar sorteo</h2>
     <label>NUEVO TITULO</label>
@@ -18,15 +49,6 @@
       required
       [(ngModel)]="raffle.urlImage"
     />
-    <button (click)="addRaffle()">Aceptar</button>
+    <button (click)="addRaffle()">ACEPTAR</button>
   </form>
-
-  <div class="realizar-sorteo">
-    <h2>Sortear</h2>
-    <button (click)="makeRaffle()">Ir</button>
-  </div>
-  <div class="ver-participantes">
-    <h2>Ver antiguos participantes</h2>
-    <button (click)="getRaffleUsers()">Ir</button>
-  </div>
 </section>
