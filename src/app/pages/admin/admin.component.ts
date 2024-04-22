@@ -33,6 +33,10 @@ export class AdminComponent {
     private userService: UserServiceService
   ) {}
 
+  ngOnInit(){
+    this.getRaffle();
+  }
+
   getRaffle() {
     this.userService.getRaffle().subscribe(
       (response) => {
@@ -40,6 +44,7 @@ export class AdminComponent {
       },
       (error) => {
         //settear mensaje de error
+        alert("No existe sorteo activo")
       }
     );
   }

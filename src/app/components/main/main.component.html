@@ -7,9 +7,10 @@
     <h2>Participa del sorteo:</h2>
   </section>
   <section class="compras">
-    <h3>IPHONE 15 PRO MAX</h3>
+    <h3>{{ raffle.name }}</h3>
     <div class="image">
-      <img src="../../../assets/img/foto_sorteo.jpg" alt="iphone image" />
+      <!-- <img src="../../../assets/img/foto_sorteo.jpg" alt="iphone image" /> -->
+      <img [src]="raffle.urlImage" />
     </div>
     <div class="contacto">
       <form id="info_de_contacto">
