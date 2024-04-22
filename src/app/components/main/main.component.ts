@@ -3,6 +3,7 @@ import { FormsModule } from '@angular/forms';
 import { UsuarioRegister } from '../../model/usuario-register';
 import { UserServiceService } from '../../services/user-service.service';
 import { CommonModule } from '@angular/common';
+import { Raffle } from '../../model/raffle';
 
 @Component({
   selector: 'app-main',
@@ -18,6 +19,24 @@ export class MainComponent {
   usuarioRegister : UsuarioRegister = new UsuarioRegister();
   message : string;
   responseStatus : any;
+
+  raffle: Raffle = new Raffle();
+
+  ngOnInit(){
+    this.getRaffle();
+  }
+
+  getRaffle() {
+    this.userService.getRaffle().subscribe(
+      (response) => {
+        this.raffle = response;
+      },
+      (error) => {
+        //settear mensaje de error
+        alert("No existe sorteo activo")
+      }
+    );
+  }
 
   register():void{
     if(this.usuarioRegister.email.length > 0 && this.usuarioRegister.instagram.length > 0){
