@@ -36,8 +36,8 @@ export class AdminService {
   }
 
   //Este metodo hace el sorteo
-  makeRaffle(): Observable<any> {
-    return this.http.post(
+  makeRaffle(): Observable<Winner> {
+    return this.http.post<Winner>(
       this.apiUrl +
         `raffle/make?username=${this.username}&password=${this.hashedPassword}`,
       null
