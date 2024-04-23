@@ -1,4 +1,4 @@
-import { Component, NgModule } from '@angular/core';
+import { Component } from '@angular/core';
 import { NavbarComponent } from '../../components/navbar/navbar.component';
 import { FooterComponent } from '../../components/footer/footer.component';
 import { MainComponent } from '../../components/main/main.component';
@@ -27,14 +27,15 @@ export class AdminComponent {
   raffle: Raffle = new Raffle();
   ganador: Winner = new Winner();
   participantes: UsuarioRegister[] = [];
+  historicalGanadores: Winner[] = [];
 
   constructor(
     private adminService: AdminService,
     private userService: UserServiceService
   ) {}
 
-  ngOnInit(){
-    this.getRaffle();
+  ngOnInit() {
+    // this.getRaffle();
   }
 
   getRaffle() {
@@ -44,7 +45,6 @@ export class AdminComponent {
       },
       (error) => {
         //settear mensaje de error
-        alert("No existe sorteo activo")
       }
     );
   }
@@ -52,6 +52,7 @@ export class AdminComponent {
     this.adminService.addRaffle(this.raffle).subscribe(
       (response) => {
         this.raffle = response;
+        alert('SORTEO NUEVO HECHO!');
       },
       (error) => {
         console.log(error);
@@ -64,16 +65,28 @@ export class AdminComponent {
         this.ganador.emailWinner = response.emailWinner;
         this.ganador.instagramWinner = response.instagramWinner;
         this.ganador.raffleName = response.raffleName;
+        alert('');
       },
       (error) => {
-        console.log(error.message);
+        alert('SORTEO REALIZADO!');
       }
     );
   }
   getRaffleUsers() {
-    this.adminService.getRaffleUsers().subscribe((response) => {
-      this.participantes.push(...response);
-      console.log(this.participantes);
+    this.adminService.getRaffleUsers().subscribe(
+      (response) => {
+        this.participantes.push(...response);
+      },
+      (error) => {
+        alert('NO HAY PARTICIPANTES DEL SORTEO!');
+      }
+    );
+  }
+
+  getHistoricalWinners() {
+    this.adminService.getHistoricalWinners().subscribe((response) => {
+      this.historicalGanadores.push(...response);
+      console.log(response);
     });
   }
 }

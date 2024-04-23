@@ -7,22 +7,25 @@
 </section>
 <section class="compras">
   <h3>{{ raffle.name }}</h3>
-  <!-- <h3>IPHONE 15 PRO MAX</h3> -->
   <div class="image">
-    <!-- <img src="../../../assets/img/foto_sorteo.jpg" alt="iphone image" /> -->
     <img [src]="raffle.urlImage" />
   </div>
 </section>
 <section class="admin-page fadeIn">
   <div class="realizar-sorteo">
-    <h2>Sortear</h2>
-    <button (click)="makeRaffle()">IR</button>
-    <p>email del ganador: {{ ganador.emailWinner }}</p>
-    <p>instagram del ganador: {{ ganador.instagramWinner }}</p>
-    <p>sorteo ganado: {{ ganador.raffleName }}</p>
+    <h3>Sortear ganadores:</h3>
+    <button (click)="makeRaffle()">SORTEAR</button>
+    <button (click)="getHistoricalWinners()">Ver ganadores</button>
+    <ul>
+      <li *ngFor="let winner of historicalGanadores">
+        <p>Email: {{ winner.emailWinner }}</p>
+        <p>Instagram: {{ winner.instagramWinner }}</p>
+        <p>Sorteo: {{ winner.raffleName }}</p>
+      </li>
+    </ul>
   </div>
   <div class="ver-participantes">
-    <h2>Ver participantes</h2>
+    <h3>Ver participantes</h3>
     <ul>
       <li *ngFor="let participante of participantes">
         <p>Email: {{ participante.email }}</p>
@@ -32,7 +35,7 @@
     <button (click)="getRaffleUsers()">VER</button>
   </div>
   <form class="renderizar">
-    <h2>Modificar sorteo</h2>
+    <h3>Hacer sorteo</h3>
     <label>NUEVO TITULO</label>
     <input
       type="text"

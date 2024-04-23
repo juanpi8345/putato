@@ -25,7 +25,6 @@ export class AdminService {
 
   //Sorteos
 
-  //Los metodos que tienen un observable de tipo any retornan una respuesta de exito o error
   //Si ya existe un sorteo, el metodo dara un error.
   addRaffle(raffle: Raffle): Observable<any> {
     return this.http.post(
@@ -44,7 +43,6 @@ export class AdminService {
     );
   }
 
-  //Este metodo no se deberia usar, solo si el admin agrega un sorteo por error, (no participe nadie) y quiera eliminarlo.
   //Si hay usuarios participantes que pagaron, serian eliminados...
   deleteRaffle(): Observable<any> {
     return this.http.delete(
