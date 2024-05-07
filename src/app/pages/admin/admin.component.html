@@ -1,57 +1,71 @@
-<!-- <h1>ADMINISTRADOR</h1> -->
-<section class="landing">
-  <h1>
-    EL MAYOR BIEN QUE PODEMOS HACER POR LOS DEMÁS NO ES SOLO COMPARTIR NUESTRAS
-    RIQUEZAS, SINO MOSTRARLES SUS PROPIAS CAPACIDADES
-  </h1>
-</section>
-<section class="compras">
-  <h3>{{ raffle.name }}</h3>
-  <div class="image">
-    <img [src]="raffle.urlImage" />
-  </div>
-</section>
 <section class="admin-page fadeIn">
-  <div class="realizar-sorteo">
-    <h3>Sortear ganadores:</h3>
-    <button (click)="makeRaffle()">SORTEAR</button>
-    <button (click)="getHistoricalWinners()">Ver ganadores</button>
-    <ul>
-      <li *ngFor="let winner of historicalGanadores">
-        <p>Email: {{ winner.emailWinner }}</p>
-        <p>Instagram: {{ winner.instagramWinner }}</p>
-        <p>Sorteo: {{ winner.raffleName }}</p>
-      </li>
-    </ul>
-  </div>
-  <div class="ver-participantes">
-    <h3>Ver participantes</h3>
-    <ul>
-      <li *ngFor="let participante of participantes">
-        <p>Email: {{ participante.email }}</p>
-        <p>Instagram: {{ participante.instagram }}</p>
-      </li>
-    </ul>
-    <button (click)="getRaffleUsers()">VER</button>
-  </div>
-  <form class="renderizar">
-    <h3>Hacer sorteo</h3>
-    <label>NUEVO TITULO</label>
-    <input
-      type="text"
-      id="titulo-nuevo"
-      name="titulo-nuevo"
-      requires
-      [(ngModel)]="raffle.name"
-    />
-    <label>NUEVA FOTO (URL)</label>
-    <input
-      type="url"
-      id="foto-nueva"
-      name="foto-nueva"
-      required
-      [(ngModel)]="raffle.urlImage"
-    />
-    <button (click)="addRaffle()">ACEPTAR</button>
-  </form>
+  <h3>ADMINISTRADOR</h3>
+
+  <button (click)="getRaffleUsers()">Descargar participantes</button>
+  <section class="renderizacion">
+    <div>
+      <form class="renderizar">
+        <h4>Titulo:</h4>
+        <input
+          type="text"
+          id="titulo-nuevo"
+          name="titulo-nuevo"
+          requires
+          [(ngModel)]="foto1.urlImage"
+        />
+        <h4>Foto: (URL)</h4>
+        <input
+          type="url"
+          id="foto-nueva"
+          name="foto-nueva"
+          required
+          [(ngModel)]="foto2.urlImage"
+        />
+        <button (click)="addRaffle()">Aceptar</button>
+      </form>
+    </div>
+    <div>
+      <form class="renderizar">
+        <h4>Titulo:</h4>
+        <input
+          type="text"
+          id="titulo-nuevo"
+          name="titulo-nuevo"
+          requires
+          [(ngModel)]="foto3.urlImage"
+        />
+        <h4>Foto: (URL)</h4>
+        <input
+          type="url"
+          id="foto-nueva"
+          name="foto-nueva"
+          required
+          [(ngModel)]="raffle.urlImage"
+        />
+        <button (click)="addRaffle()">Aceptar</button>
+      </form>
+    </div>
+    <div>
+      <form class="renderizar">
+        <h4>Titulo:</h4>
+        <input
+          type="text"
+          id="titulo-nuevo"
+          name="titulo-nuevo"
+          requires
+          [(ngModel)]="raffle.name"
+        />
+        <h4>Foto: (URL)</h4>
+        <input
+          type="url"
+          id="foto-nueva"
+          name="foto-nueva"
+          required
+          [(ngModel)]="raffle.urlImage"
+        />
+        <button (click)="addRaffle()">Aceptar</button>
+      </form>
+    </div>
+  </section>
+  <button id="eliminarSorteo" (click)="makeRaffle()">Eliminar sorteo</button>
 </section>

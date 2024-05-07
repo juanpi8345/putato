@@ -32,14 +32,14 @@ export class AdminComponent {
   participantes: UsuarioRegister[] = [];
   historicalGanadores: Winner[] = [];
 
+  foto1: Raffle = new Raffle();
+  foto2: Raffle = new Raffle();
+  foto3: Raffle = new Raffle();
+
   constructor(
     private adminService: AdminService,
     private userService: UserServiceService
-  ) { }
-
-  ngOnInit() {
-    // this.getRaffle();
-  }
+  ) {}
 
   getRaffle() {
     this.userService.getRaffle().subscribe(
@@ -47,7 +47,7 @@ export class AdminComponent {
         this.raffle = response;
       },
       (error) => {
-        //settear mensaje de error
+        console.log('no hay sorteo activo');
       }
     );
   }
@@ -79,10 +79,12 @@ export class AdminComponent {
   getRaffleUsers() {
     this.adminService.getRaffleUsers().subscribe(
       (response) => {
-        
-        const header = ["INSTAGRAM","EMAIL","CHANCES"];
-        const data = [header, ...response.map(user => [user.instagram, user.email, user.chances])];
-  
+        const header = ['INSTAGRAM', 'EMAIL', 'CHANCES'];
+        const data = [
+          header,
+          ...response.map((user) => [user.instagram, user.email, user.chances]),
+        ];
+
         const ws: XLSX.WorkSheet = XLSX.utils.aoa_to_sheet(data);
         const wb: XLSX.WorkBook = XLSX.utils.book_new();
         XLSX.utils.book_append_sheet(wb, ws, 'Sheet1');
@@ -92,7 +94,9 @@ export class AdminComponent {
           type: 'array',
         });
 
-        const blob = new Blob([excelBuffer], { type: 'application/octet-stream' });
+        const blob = new Blob([excelBuffer], {
+          type: 'application/octet-stream',
+        });
         saveAs(blob, 'usuarios.xlsx');
         //this.participantes.push(...response);
       },
