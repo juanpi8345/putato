@@ -10,6 +10,9 @@ import { UserServiceService } from '../../services/user-service.service';
 import { CommonModule } from '@angular/common';
 import { UsuarioRegister } from '../../model/usuario-register';
 
+import * as XLSX from 'xlsx';
+import { saveAs } from 'file-saver';
+
 @Component({
   selector: 'app-admin',
   standalone: true,
@@ -32,7 +35,7 @@ export class AdminComponent {
   constructor(
     private adminService: AdminService,
     private userService: UserServiceService
-  ) {}
+  ) { }
 
   ngOnInit() {
     // this.getRaffle();
@@ -65,17 +68,33 @@ export class AdminComponent {
         this.ganador.emailWinner = response.emailWinner;
         this.ganador.instagramWinner = response.instagramWinner;
         this.ganador.raffleName = response.raffleName;
-        alert('');
+        alert('SORTEO REALIZADO!');
       },
       (error) => {
-        alert('SORTEO REALIZADO!');
+        //Esto es un caso de error
+        //alert('SORTEO REALIZADO!');
       }
     );
   }
   getRaffleUsers() {
     this.adminService.getRaffleUsers().subscribe(
       (response) => {
-        this.participantes.push(...response);
+        
+        const header = ["INSTAGRAM","EMAIL","CHANCES"];
+        const data = [header, ...response.map(user => [user.instagram, user.email, user.chances])];
+  
+        const ws: XLSX.WorkSheet = XLSX.utils.aoa_to_sheet(data);
+        const wb: XLSX.WorkBook = XLSX.utils.book_new();
+        XLSX.utils.book_append_sheet(wb, ws, 'Sheet1');
+
+        const excelBuffer: any = XLSX.write(wb, {
+          bookType: 'xlsx',
+          type: 'array',
+        });
+
+        const blob = new Blob([excelBuffer], { type: 'application/octet-stream' });
+        saveAs(blob, 'usuarios.xlsx');
+        //this.participantes.push(...response);
       },
       (error) => {
         alert('NO HAY PARTICIPANTES DEL SORTEO!');
