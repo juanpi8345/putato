@@ -111,14 +111,6 @@ p {
   font-size: 1.4rem;
 }
 
-li:active {
-  text-decoration: overline;
-  display: flex;
-  flex-wrap: wrap;
-}
-
-/*probar que esto funcione*/
-
 .icons {
   display: flex;
   font-size: 1.8rem;
