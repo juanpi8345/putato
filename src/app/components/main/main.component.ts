@@ -4,11 +4,12 @@ import { UsuarioRegister } from '../../model/usuario-register';
 import { UserServiceService } from '../../services/user-service.service';
 import { CommonModule } from '@angular/common';
 import { Raffle } from '../../model/raffle';
+import { SlickCarouselModule } from 'ngx-slick-carousel';
 
 @Component({
   selector: 'app-main',
   standalone: true,
-  imports: [FormsModule, CommonModule],
+  imports: [FormsModule, CommonModule, SlickCarouselModule],
   templateUrl: './main.component.html',
   styleUrl: './main.component.css',
 })
@@ -18,20 +19,26 @@ export class MainComponent {
   usuarioRegister: UsuarioRegister = new UsuarioRegister();
   message: string;
   responseStatus: any;
+  responseGetRaffle: string;
 
   raffle: Raffle = new Raffle();
-  // foto1: Raffle = new Raffle();
-  // foto2: Raffle = new Raffle();
-  // foto3: Raffle = new Raffle();
+
+  scrollDown() {
+    document.querySelector('.chances').scrollIntoView({ behavior: 'smooth' });
+  }
 
   selectOne() {
-    window.location.href = 'https://mpago.la/18kprt2';
+    window.open('https://mpago.la/17FJoL8');
   }
+
   selectThree() {
-    window.location.href = 'https://mpago.la/2xr7y4H';
+    //    window.location.href = 'https://mpago.la/2xr7y4H';
+    window.open('https://mpago.la/2xr7y4H');
   }
+
   selectTen() {
-    window.location.href = 'https://mpago.la/1CiVSyp';
+    //    window.location.href = 'https://mpago.la/1CiVSyp';
+    window.open('https://mpago.la/1CiVSyp');
   }
 
   getRaffle() {
@@ -40,33 +47,9 @@ export class MainComponent {
         this.raffle = response;
       },
       (error) => {
-        //settear mensaje de error
-        alert('No existe sorteo activo');
+        //        alert('No existe sorteo activo');
+        this.responseGetRaffle = 'No hay sorteo activo';
       }
     );
-  }
-
-  register(): void {
-    if (
-      this.usuarioRegister.email.length > 0 &&
-      this.usuarioRegister.instagram.length > 0
-    ) {
-      this.userService.register(this.usuarioRegister).subscribe(
-        (response) => {
-          this.message = 'Usuario registrado con exito';
-          this.responseStatus = response.status;
-          //Swal.fire("Usuario registrado","El usuario se registro correctamente","success");
-        },
-        (err) => {
-          console.log(err);
-          this.responseStatus = err.status;
-          if ((err.status = 400))
-            this.message = 'Ya existe un usuario con ese instagram y/o email';
-          //Swal.fire("Usuario existente","Ya existe un usuario con ese instagram y/o email","warning");
-        }
-      );
-    }
-    //Swal.fire("Campos sin completar","Completa los campos antes de registrarte","error");
-    else this.message = 'Completa los campos antes de registrarte';
   }
 }

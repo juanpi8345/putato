@@ -25,7 +25,10 @@ button {
   padding: 5px;
   border-radius: 5px;
   margin-top: 5px;
+  width: fit-content;
+  /* align-self: center; */
   border: 1px solid black;
+  background-color: #fff692;
 }
 h3 {
   font-weight: 400;
@@ -45,10 +48,19 @@ div {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 2%;
+  padding: 2% 0%;
 }
 #eliminarSorteo {
-  background-color: red;
+  background-color: #a50104;
   color: black;
   width: auto;
+  color: white;
+}
+.renderizacion {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+input {
+  margin-left: 5px;
 }

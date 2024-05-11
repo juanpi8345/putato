@@ -20,18 +20,20 @@ html {
   align-items: center;
 }
 
+/* 
 header {
   padding: 1rem 2rem;
   padding-right: 1rem;
   /* border-bottom: 1px solid black; */
-  /* box-shadow: rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.07) 0px 16px 16px; */
+/* box-shadow: rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.07) 0px 16px 16px; 
   align-items: center;
   display: flex;
   justify-content: space-between;
-}
+} */
 
 nav {
   display: flex;
+  visibility: hidden;
   /* flex-direction: column; */
 }
 
@@ -50,19 +52,34 @@ li {
 
 h2 {
   text-align: center;
-  font-size: 2rem;
+  font-size: 3.7rem;
+  text-shadow: 2px 4px 4px rgba(0, 0, 0, 0.2),
+    0px -5px 10px rgba(255, 255, 255, 0.15);
+  color: #191800;
+  padding-right: 7%;
 }
 
 h3 {
-  font-size: 2.5rem;
+  font-size: 4.5rem;
+  padding-left: 47px;
   font-weight: 600;
   text-align: center;
+  /* position: sticky;
+  top: 80px;
+  z-index: 1000; */
+  background-color: #ffec24;
+  color: black;
+  margin-bottom: 20px;
 }
-
+h4 {
+  font-size: 3.5rem;
+  padding-left: 27px;
+}
 .icons {
   display: flex;
   font-size: 1.8rem;
   align-self: stretch;
+  padding-right: 36px;
 }
 
 .icons a {
@@ -70,7 +87,11 @@ h3 {
   align-items: center;
   padding: 1rem;
 }
-
+.icons a:hover {
+  cursor: pointer;
+  text-shadow: 2px 4px 4px rgba(0, 0, 0, 0.2),
+    0px -5px 10px rgba(255, 255, 255, 0.15);
+}
 .fa-instagram:before,
 .fa-tiktok:before,
 .fa-youtube:before {
@@ -90,6 +111,7 @@ a {
   color: black;
   text-decoration: none;
 }
+
 @keyframes fadeIn {
   0% {
     opacity: 0;
@@ -103,6 +125,11 @@ a {
 .fadeIn {
   opacity: 0;
   animation: fadeIn 0.5s ease-in-out forwards;
+}
+@media (max-width: 1440px) {
+  .landing img {
+    width: 450px;
+  }
 }
 
 @media (max-width: 85em) {

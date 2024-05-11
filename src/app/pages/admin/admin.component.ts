@@ -31,37 +31,44 @@ export class AdminComponent {
   ganador: Winner = new Winner();
   participantes: UsuarioRegister[] = [];
   historicalGanadores: Winner[] = [];
-
-  foto1: Raffle = new Raffle();
-  foto2: Raffle = new Raffle();
-  foto3: Raffle = new Raffle();
+  responseGetRaffle: string;
+  responseMakeRaffle: string;
+  responseDeleteRaffle: string;
 
   constructor(
     private adminService: AdminService,
     private userService: UserServiceService
   ) {}
 
+  ngOnInit() {
+    this.getRaffle();
+  }
+
   getRaffle() {
     this.userService.getRaffle().subscribe(
       (response) => {
         this.raffle = response;
+        this.responseGetRaffle = 'HAY UN SORTEO ACTIVO';
       },
       (error) => {
-        console.log('no hay sorteo activo');
+        this.responseGetRaffle = 'NO HAY UN SORTEO ACTIVO';
       }
     );
   }
+
   addRaffle() {
     this.adminService.addRaffle(this.raffle).subscribe(
       (response) => {
-        this.raffle = response;
-        alert('SORTEO NUEVO HECHO!');
+        this.responseMakeRaffle = 'SORTEO NUEVO HECHO!';
+        this.responseGetRaffle = 'HAY UN SORTEO ACTIVO';
       },
       (error) => {
-        console.log(error);
+        this.responseMakeRaffle =
+          'Ya hay un sorteo activo. Eliminarlo antes de empezar otro.';
       }
     );
   }
+
   makeRaffle() {
     this.adminService.makeRaffle().subscribe(
       (response) => {
@@ -71,11 +78,23 @@ export class AdminComponent {
         alert('SORTEO REALIZADO!');
       },
       (error) => {
-        //Esto es un caso de error
-        //alert('SORTEO REALIZADO!');
+        alert('error');
       }
     );
   }
+
+  deleteRaffle() {
+    this.adminService.deleteRaffle().subscribe(
+      (response) => {
+        this.responseDeleteRaffle = 'Sorteo eliminado con éxito';
+      },
+      (error) => {
+        this.responseDeleteRaffle = 'NO HAY UN SORTEO ACTIVO';
+        this.responseGetRaffle = 'NO HAY UN SORTEO ACTIVO';
+      }
+    );
+  }
+
   getRaffleUsers() {
     this.adminService.getRaffleUsers().subscribe(
       (response) => {

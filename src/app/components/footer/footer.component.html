@@ -1,5 +1,29 @@
 <footer>
   <div class="contenedor-footer">
+    <p class="footertext">Suscribite para recibir novedades</p>
+    <span>{{ responseStatus }}</span>
+
+    <div class="contacto">
+      <form>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Email"
+          required
+          [(ngModel)]="usuarioRegister.email"
+        />
+        <input
+          type="string"
+          id="instagram"
+          name="instagram"
+          placeholder="Instagram"
+          required
+          [(ngModel)]="usuarioRegister.instagram"
+        />
+        <button (click)="register()"><span>Enviar</span></button>
+      </form>
+    </div>
     <p>
       SUJETO A SIN OBLIGACION DE COMPRA LEY DE LEALTAD COMERCIAL (LEY - 22.802)
     </p>
