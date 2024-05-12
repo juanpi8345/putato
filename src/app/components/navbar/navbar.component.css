@@ -24,3 +24,12 @@ header {
     padding: 0px;
   }
 }
+@media (max-width: 429px) {
+  h4 {
+    font-size: 2rem;
+    padding: 0px;
+  }
+  p {
+    padding-bottom: 60px;
+  }
+}
