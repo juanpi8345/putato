@@ -127,7 +127,7 @@ h1 {
   p {
     padding: 1%;
     font-size: 1.5rem;
-    text-align: left;
+    text-align: center;
   }
   form {
     display: flex;
@@ -158,7 +158,7 @@ h1 {
     display: none;
   }
   .chance img {
-    width: 18rem;
+    width: 17rem;
   }
 }
 @media (max-width: 423px) {
