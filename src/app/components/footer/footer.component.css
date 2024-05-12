@@ -45,3 +45,12 @@ button {
   padding-top: 2%;
   padding-bottom: 1%;
 }
+@media (max-width: 425px) {
+  input {
+    padding: 1px;
+  }
+  p {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+}
