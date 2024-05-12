@@ -176,4 +176,7 @@ h1 {
   form {
     display: flex;
   }
+  p {
+    padding-bottom: 60px;
+  }
 }
