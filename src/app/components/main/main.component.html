@@ -2,9 +2,8 @@
   <!-- <h3>REGALOS</h3> -->
   <section class="landing">
     <!-- <img [src]="foto1.urlImage" /> -->
-    <div class="item">
+    <div class="item noshow">
       <img src="../../../assets/img/Iphone13.png" (click)="scrollDown()" />
-      <h3>2do</h3>
     </div>
 
     <div class="item">
@@ -13,11 +12,9 @@
         id="todoJunto"
         (click)="scrollDown()"
       />
-      <h3 class="bigger">1ro</h3>
     </div>
-    <div class="item">
+    <div class="item noshow">
       <img src="../../../assets/img/Iphone15.png" (click)="scrollDown()" />
-      <h3>3ro</h3>
     </div>
   </section>
   <h3>CHANCES</h3>
@@ -38,10 +35,12 @@
     </div>
     <div class="chance" (click)="selectThree()">
       <img src="../../../assets/img/3Chances.png" />
+
       <h3 id="importante">$999</h3>
     </div>
     <div class="chance" (click)="selectTen()">
       <img src="../../../assets/img/10chances.png" />
+
       <h3>$2999</h3>
     </div>
   </div>
