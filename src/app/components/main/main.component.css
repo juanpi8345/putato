@@ -1,5 +1,5 @@
 .landing {
-  padding: 60px;
+  padding: 30px;
 }
 .landing img:hover {
   cursor: pointer;
@@ -52,7 +52,7 @@
 }
 
 .chance h3 {
-  padding: 20px;
+  /* padding: 20px; */
   text-align: center;
   font-weight: bold;
   font-size: x-large;
@@ -71,8 +71,9 @@
 }
 p {
   font-size: 2rem;
-  padding: 10px;
   text-align: center;
+  padding-bottom: 60px;
+  padding-top: 30px;
 }
 h1 {
   font-size: xx-large;
@@ -81,11 +82,10 @@ h1 {
 #importante {
   font-size: 4.4rem;
 }
-/* #todoJunto {
-  width: 40%;
-  margin-bottom: 80px;
-} */
-
+.texto-alias {
+  padding-left: 6%;
+  padding-right: 6%;
+}
 @media (max-width: 425px) {
   #todoJunto {
     width: 200px;
