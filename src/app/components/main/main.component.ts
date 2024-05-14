@@ -4,12 +4,12 @@ import { UsuarioRegister } from '../../model/usuario-register';
 import { UserServiceService } from '../../services/user-service.service';
 import { CommonModule } from '@angular/common';
 import { Raffle } from '../../model/raffle';
-import { SlickCarouselModule } from 'ngx-slick-carousel';
+import { ContadorReversaModule } from '../contador-reversa/contador-reversa.module';
 
 @Component({
   selector: 'app-main',
   standalone: true,
-  imports: [FormsModule, CommonModule, SlickCarouselModule],
+  imports: [FormsModule, CommonModule, ContadorReversaModule],
   templateUrl: './main.component.html',
   styleUrl: './main.component.css',
 })
@@ -24,7 +24,7 @@ export class MainComponent {
   raffle: Raffle = new Raffle();
 
   scrollDown() {
-    document.querySelector('.chances').scrollIntoView({ behavior: 'smooth' });
+    document.querySelector('h3').scrollIntoView({ behavior: 'smooth' });
   }
 
   selectOne() {
