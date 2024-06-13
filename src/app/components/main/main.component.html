@@ -1,27 +1,31 @@
 <main class="fadeIn">
   <!-- <h3>REGALOS</h3> -->
   <section class="landing">
-    <!-- <img [src]="foto1.urlImage" /> -->
+    <!-- <img [src]="foto1.urlImage" alt=""/> -->
     <div class="item noshow">
-      <img src="../../../assets/img/Iphone13.png" (click)="scrollDown()" />
+      <img src="../../../assets/img/Iphone14.png" alt="iphone 14 img" />
     </div>
 
     <div class="item">
       <img
-        src="../../../assets/img/3iphones.png"
+        src="../../../assets/img/todoslospremios.png"
         id="todoJunto"
         (click)="scrollDown()"
       />
     </div>
     <div class="item noshow">
-      <img src="../../../assets/img/Iphone15.png" (click)="scrollDown()" />
+      <img
+        src="../../../assets/img/Iphone15.png"
+        (click)="scrollDown()"
+        alt="iphone 15 img"
+      />
     </div>
   </section>
   <h3>Compra Chances</h3>
 
   <div class="chances">
     <div class="chance" (click)="selectOne()">
-      <img src="../../../assets/img/1Chance.png" />
+      <img src="../../../assets/img/1Chance.png" alt="" />
       <!-- <h3 [ngStyle]="{ color: 'white' }">Una chance</h3>
       <h3 [ngStyle]="{ color: '#726D7D' }">Desde</h3> -->
       <h3
@@ -34,12 +38,12 @@
       </h3>
     </div>
     <div class="chance" (click)="selectThree()">
-      <img src="../../../assets/img/3Chances.png" />
+      <img src="../../../assets/img/3Chances.png" alt="" />
 
       <h3 id="importante">$999</h3>
     </div>
     <div class="chance" (click)="selectTen()">
-      <img src="../../../assets/img/10chances.png" />
+      <img src="../../../assets/img/10chances.png" alt="" />
 
       <h3>$2999</h3>
     </div>

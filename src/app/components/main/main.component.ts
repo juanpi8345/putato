@@ -24,21 +24,27 @@ export class MainComponent {
   raffle: Raffle = new Raffle();
 
   scrollDown() {
-    document.querySelector('h3').scrollIntoView({ behavior: 'smooth' });
+    const element = document.querySelector('h3');
+    const offset = 100; // Ajusta este valor según sea necesario
+    const elementPosition = element.getBoundingClientRect().top;
+    const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: 'smooth',
+    });
   }
 
   selectOne() {
-    window.open('https://mpago.la/17FJoL8');
+    window.open('https://mpago.la/1Euh7da');
   }
 
   selectThree() {
-    //    window.location.href = 'https://mpago.la/2xr7y4H';
-    window.open('https://mpago.la/2xr7y4H');
+    window.open('https://mpago.la/1XG65p3');
   }
 
   selectTen() {
-    //    window.location.href = 'https://mpago.la/1CiVSyp';
-    window.open('https://mpago.la/1CiVSyp');
+    window.open('https://mpago.la/1KuLfuZ');
   }
 
   getRaffle() {
