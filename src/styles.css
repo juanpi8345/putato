@@ -20,26 +20,13 @@ html {
   align-items: center;
 }
 
-/* 
-header {
-  padding: 1rem 2rem;
-  padding-right: 1rem;
-  /* border-bottom: 1px solid black; */
-/* box-shadow: rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.07) 0px 16px 16px; 
-  align-items: center;
-  display: flex;
-  justify-content: space-between;
-} */
-
 nav {
   display: flex;
   visibility: hidden;
-  /* flex-direction: column; */
 }
 
 ul {
   display: flex;
-  /* flex-direction: column; */
 }
 
 li {
@@ -47,40 +34,27 @@ li {
   font-style: normal;
   list-style: none;
   font-size: 1.4rem;
-  width: 114px;
-}
-
-h2 {
-  text-align: center;
-  font-size: 3.7rem;
-  text-shadow: 2px 4px 4px rgba(0, 0, 0, 0.2),
-    0px -5px 10px rgba(255, 255, 255, 0.15);
-  color: #191800;
-  padding-right: 7%;
 }
 
 h3 {
-  font-size: 3.5rem;
-  font-weight: 600;
+  font-size: 3.4rem;
   text-align: center;
-  /* position: sticky;
-  top: 80px;
-  z-index: 1000;
-  background-color: rgba(255, 236, 36, 0.5); */
-  color: black;
   text-transform: uppercase;
   font-weight: 600;
   letter-spacing: 0.125rem;
-
-  /* margin-bottom: 20px; */
+  border-bottom: 1px solid white;
+  padding-bottom: 1rem;
 }
 h4 {
   font-size: 3.6rem;
+  text-align: center;
+  font-weight: 600;
+  letter-spacing: 0.125rem;
   padding-left: 27px;
 }
 .icons {
   display: flex;
-  font-size: 1.8rem;
+  font-size: 2rem;
   align-self: stretch;
   padding-right: 36px;
 }
@@ -92,8 +66,8 @@ h4 {
 }
 .icons a:hover {
   cursor: pointer;
-  text-shadow: 2px 4px 4px rgba(0, 0, 0, 0.2),
-    0px -5px 10px rgba(255, 255, 255, 0.15);
+  text-shadow: 2px 4px 4px white;
+  opacity: 0.7;
 }
 .fa-instagram:before,
 .fa-tiktok:before,
@@ -132,24 +106,6 @@ a {
 @media (max-width: 1440px) {
   .landing img {
     width: 450px;
-  }
-}
-
-@media (max-width: 85em) {
-  footer h2 {
-    font-size: 30rem;
-  }
-}
-
-@media (max-width: 74em) {
-  footer h2 {
-    font-size: 25rem;
-  }
-}
-
-@media (max-width: 61em) {
-  footer h2 {
-    font-size: 20rem;
   }
 }
 

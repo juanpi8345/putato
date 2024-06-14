@@ -24,10 +24,7 @@
   justify-content: center;
   align-items: center;
 }
-#profile_picture {
-  width: 30%;
-  padding-bottom: 0px;
-}
+
 .chances {
   display: flex;
   justify-content: center;
