@@ -7,73 +7,18 @@
 
 html {
   background-color: #ffec24;
-  font-size: 62.5%;
+  color: #03191e;
   font-family: "Space Mono", monospace;
   font-optical-sizing: auto;
   font-style: normal;
   width: 100vw;
 }
 
-.landing {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-nav {
-  display: flex;
-  visibility: hidden;
-}
-
-ul {
-  display: flex;
-}
-
-li {
-  font-weight: 400;
-  font-style: normal;
-  list-style: none;
-  font-size: 1.4rem;
-}
-
 h3 {
-  font-size: 3.4rem;
-  text-align: center;
+  font-size: 2.5rem;
   text-transform: uppercase;
-  font-weight: 600;
   letter-spacing: 0.125rem;
-  border-bottom: 1px solid white;
-  padding-bottom: 1rem;
-}
-h4 {
-  font-size: 3.6rem;
-  text-align: center;
-  font-weight: 600;
-  letter-spacing: 0.125rem;
-  padding-left: 27px;
-}
-.icons {
-  display: flex;
-  font-size: 2rem;
-  align-self: stretch;
-  padding-right: 36px;
-}
-
-.icons a {
-  display: flex;
-  align-items: center;
-  padding: 1rem;
-}
-.icons a:hover {
-  cursor: pointer;
-  text-shadow: 2px 4px 4px white;
-  opacity: 0.7;
-}
-.fa-instagram:before,
-.fa-tiktok:before,
-.fa-youtube:before {
-  height: 1.6rem;
-  width: 1.6rem;
+  color: #03191e;
 }
 
 img {
@@ -106,6 +51,24 @@ a {
 @media (max-width: 1440px) {
   .landing img {
     width: 450px;
+  }
+}
+
+@media (max-width: 85em) {
+  footer h2 {
+    font-size: 30rem;
+  }
+}
+
+@media (max-width: 74em) {
+  footer h2 {
+    font-size: 25rem;
+  }
+}
+
+@media (max-width: 61em) {
+  footer h2 {
+    font-size: 20rem;
   }
 }
 
