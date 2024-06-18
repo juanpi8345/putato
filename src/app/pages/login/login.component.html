@@ -1,22 +1,28 @@
 <div class="fadeIn login">
   <form id="info_de_contacto">
-    <label>USUARIO</label>
-    <input
-      type="text"
-      id="user"
-      name="user"
-      required
-      [(ngModel)]="adminLogin.username"
-    />
-    <label>CONTRASEÑA</label>
-    <input
-      type="password"
-      id="password"
-      name="password"
-      required
-      [(ngModel)]="adminLogin.password"
-    />
-    <button type="submit" id="footer-button" (click)="login()">LOGIN</button>
+    <div>
+      <label>USUARIO</label>
+      <input
+        type="text"
+        id="user"
+        name="user"
+        required
+        [(ngModel)]="adminLogin.username"
+      />
+    </div>
+    <div>
+      <label>CONTRASEÑA</label>
+      <input
+        type="password"
+        id="password"
+        name="password"
+        required
+        [(ngModel)]="adminLogin.password"
+      />
+    </div>
+    <div class="button_container">
+      <button type="submit" id="footer-button" (click)="login()">LOGIN</button>
+    </div>
     <div id="mensaje_de_respuesta">
       <h4></h4>
     </div>

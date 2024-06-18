@@ -1,66 +1,36 @@
-* {
-  padding: 0px;
-  margin: 0px;
-  box-sizing: border-box;
-}
 .admin-page {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-evenly;
-  padding: 10px;
-  height: 90vh;
+  padding: 2% 0%;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  padding: 2% 0%;
+}
+label {
+  font-size: 16px;
+  margin: 10px;
 }
 input {
   box-shadow: none;
   background-color: inherit;
   color: #1a1a1a;
   border: 1px solid #1a1a1a;
-  margin-bottom: 5px;
-}
-h4 {
-  margin-bottom: 5px;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 5px;
+  width: 100%;
 }
 button {
-  padding: 5px;
-  border-radius: 5px;
-  margin-top: 5px;
-  width: fit-content;
-  /* align-self: center; */
-  border: 1px solid black;
-  background-color: #fff692;
-}
-h3 {
-  font-weight: 400;
-  font-size: 2rem;
-  text-align: start;
-}
-h4 {
-  font-weight: 400;
-  font-size: 1.2rem;
-  text-align: start;
-}
-form {
-  width: 300px;
-}
-form,
-div {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 2% 0%;
-}
-#eliminarSorteo {
-  background-color: #a50104;
-  color: black;
+  border: 1px solid #313131;
+  background-color: inherit;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 10px;
   width: auto;
-  color: white;
-}
-.renderizacion {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-input {
-  margin-left: 5px;
 }

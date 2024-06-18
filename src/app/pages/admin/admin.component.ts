@@ -5,13 +5,8 @@ import { MainComponent } from '../../components/main/main.component';
 import { AdminService } from '../../services/admin.service';
 import { Raffle } from '../../model/raffle';
 import { FormsModule } from '@angular/forms';
-import { Winner } from '../../model/winner';
 import { UserServiceService } from '../../services/user-service.service';
 import { CommonModule } from '@angular/common';
-import { UsuarioRegister } from '../../model/usuario-register';
-
-import * as XLSX from 'xlsx';
-import { saveAs } from 'file-saver';
 
 @Component({
   selector: 'app-admin',
@@ -28,107 +23,11 @@ import { saveAs } from 'file-saver';
 })
 export class AdminComponent {
   raffle: Raffle = new Raffle();
-  ganador: Winner = new Winner();
-  participantes: UsuarioRegister[] = [];
-  historicalGanadores: Winner[] = [];
-  responseGetRaffle: string;
-  responseMakeRaffle: string;
-  responseDeleteRaffle: string;
+  raffleTwo: Raffle = new Raffle();
+  raffleThree: Raffle = new Raffle();
 
   constructor(
     private adminService: AdminService,
     private userService: UserServiceService
   ) {}
-
-  ngOnInit() {
-    this.getRaffle();
-  }
-
-  getRaffle() {
-    this.userService.getRaffle().subscribe(
-      (response) => {
-        this.raffle = response;
-        this.responseGetRaffle = 'HAY UN SORTEO ACTIVO';
-      },
-      (error) => {
-        this.responseGetRaffle = 'NO HAY UN SORTEO ACTIVO';
-      }
-    );
-  }
-
-  addRaffle() {
-    this.adminService.addRaffle(this.raffle).subscribe(
-      (response) => {
-        this.responseMakeRaffle = 'SORTEO NUEVO HECHO!';
-        this.responseGetRaffle = 'HAY UN SORTEO ACTIVO';
-      },
-      (error) => {
-        this.responseMakeRaffle =
-          'Ya hay un sorteo activo. Eliminarlo antes de empezar otro.';
-      }
-    );
-  }
-
-  makeRaffle() {
-    this.adminService.makeRaffle().subscribe(
-      (response) => {
-        this.ganador.emailWinner = response.emailWinner;
-        this.ganador.instagramWinner = response.instagramWinner;
-        this.ganador.raffleName = response.raffleName;
-        alert('SORTEO REALIZADO!');
-      },
-      (error) => {
-        alert('error');
-      }
-    );
-  }
-
-  deleteRaffle() {
-    this.adminService.deleteRaffle().subscribe(
-      (response) => {
-        this.responseDeleteRaffle = 'Sorteo eliminado con éxito';
-      },
-      (error) => {
-        this.responseDeleteRaffle = 'NO HAY UN SORTEO ACTIVO';
-        this.responseGetRaffle = 'NO HAY UN SORTEO ACTIVO';
-      }
-    );
-  }
-
-  getRaffleUsers() {
-    this.adminService.getRaffleUsers().subscribe(
-      (response) => {
-        const header = ['INSTAGRAM', 'EMAIL', 'CHANCES'];
-        const data = [
-          header,
-          ...response.map((user) => [user.instagram, user.email, user.chances]),
-        ];
-
-        const ws: XLSX.WorkSheet = XLSX.utils.aoa_to_sheet(data);
-        const wb: XLSX.WorkBook = XLSX.utils.book_new();
-        XLSX.utils.book_append_sheet(wb, ws, 'Sheet1');
-
-        const excelBuffer: any = XLSX.write(wb, {
-          bookType: 'xlsx',
-          type: 'array',
-        });
-
-        const blob = new Blob([excelBuffer], {
-          type: 'application/octet-stream',
-        });
-        saveAs(blob, 'usuarios.xlsx');
-        //this.participantes.push(...response);
-      },
-      (error) => {
-        alert('NO HAY PARTICIPANTES DEL SORTEO!');
-      }
-    );
-  }
-
-  getHistoricalWinners() {
-    this.adminService.getHistoricalWinners().subscribe((response) => {
-      this.historicalGanadores.push(...response);
-      console.log(response);
-    });
-  }
 }
