@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./contador-reversa.component.css'],
 })
 export class ContadorReversaComponent implements OnInit {
-  fechaObjetivo: Date = new Date('2024-06-07T22:00:00');
+  fechaObjetivo: Date = new Date('2024-06-23T18:00:00');
   tiempoRestante: any = {};
 
   constructor() {}
