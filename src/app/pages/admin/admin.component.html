@@ -27,8 +27,16 @@
         required
         [(ngModel)]="raffleThree.urlImage"
       />
+      <input
+        type="date"
+        id="fecha-nueva"
+        name="fecha-nueva"
+        placeholder="fecha"
+        [(ngModel)]="nuevaFecha"
+        (change)="actualizarFecha()"
+      />
 
-      <button>Aceptar</button>
+      <button type="submit">Aceptar</button>
     </form>
   </div>
 </section>

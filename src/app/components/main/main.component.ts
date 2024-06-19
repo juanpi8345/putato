@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { UsuarioRegister } from '../../model/usuario-register';
 import { UserServiceService } from '../../services/user-service.service';
@@ -14,6 +14,8 @@ import { ContadorReversaModule } from '../contador-reversa/contador-reversa.modu
   styleUrl: './main.component.css',
 })
 export class MainComponent {
+  @Input() raffleImages: string[] = [];
+
   constructor(private userService: UserServiceService) {}
 
   usuarioRegister: UsuarioRegister = new UsuarioRegister();
@@ -25,10 +27,9 @@ export class MainComponent {
 
   scrollDown() {
     const element = document.querySelector('h3');
-    const offset = 100; // Ajusta este valor según sea necesario
+    const offset = 100;
     const elementPosition = element.getBoundingClientRect().top;
     const offsetPosition = elementPosition + window.pageYOffset - offset;
-
     window.scrollTo({
       top: offsetPosition,
       behavior: 'smooth',
@@ -38,24 +39,10 @@ export class MainComponent {
   selectOne() {
     window.open('https://mpago.la/1Euh7da');
   }
-
   selectThree() {
     window.open('https://mpago.la/1XG65p3');
   }
-
   selectTen() {
     window.open('https://mpago.la/1KuLfuZ');
-  }
-
-  getRaffle() {
-    this.userService.getRaffle().subscribe(
-      (response) => {
-        this.raffle = response;
-      },
-      (error) => {
-        //        alert('No existe sorteo activo');
-        this.responseGetRaffle = 'No hay sorteo activo';
-      }
-    );
   }
 }
