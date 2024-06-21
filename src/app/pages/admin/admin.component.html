@@ -9,7 +9,7 @@
         name="foto-nueva"
         placeholder="foto"
         required
-        [(ngModel)]="raffle.urlImage"
+        [(ngModel)]="raffle.urlImage1"
       />
       <input
         type="url"
@@ -17,7 +17,7 @@
         name="foto-nueva"
         placeholder="foto"
         required
-        [(ngModel)]="raffleTwo.urlImage"
+        [(ngModel)]="raffle.urlImage2"
       />
       <input
         type="url"
@@ -25,18 +25,16 @@
         name="foto-nueva"
         placeholder="foto"
         required
-        [(ngModel)]="raffleThree.urlImage"
+        [(ngModel)]="raffle.urlImage3"
       />
       <input
         type="date"
         id="fecha-nueva"
         name="fecha-nueva"
         placeholder="fecha"
-        [(ngModel)]="nuevaFecha"
-        (change)="actualizarFecha()"
+        [(ngModel)]="raffle.raffleDate"
       />
-
-      <button type="submit">Aceptar</button>
+      <button type="submit" (click)="submitForm()">Aceptar</button>
     </form>
   </div>
 </section>

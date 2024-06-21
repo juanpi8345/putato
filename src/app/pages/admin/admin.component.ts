@@ -7,7 +7,7 @@ import { FechaService } from '../../services/fecha.service';
 import { Raffle } from '../../model/raffle';
 import { FormsModule } from '@angular/forms';
 import { UserServiceService } from '../../services/user-service.service';
-import { CommonModule } from '@angular/common';
+import { CommonModule, DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-admin',
@@ -24,26 +24,36 @@ import { CommonModule } from '@angular/common';
 })
 export class AdminComponent {
   raffle: Raffle = new Raffle();
-  raffleTwo: Raffle = new Raffle();
-  raffleThree: Raffle = new Raffle();
-  nuevaFecha: Date;
-
   constructor(
     private adminService: AdminService,
     private userService: UserServiceService,
-    private fechaService: FechaService
+    private fechaService: FechaService,
+    private datePipe: DatePipe
   ) {}
 
-  actualizarFecha() {
-    if (this.nuevaFecha) {
-      this.fechaService.setFechaObjetivo(this.nuevaFecha);
-    }
+
+  ngOnInit(){
+
   }
+
   submitForm() {
-    const raffleImages = [
-      this.raffle.urlImage,
-      this.raffleTwo.urlImage,
-      this.raffleThree.urlImage,
-    ];
+    //Se convierte la fecha a formato YYYY/MM/DD, por como la recibe el backend.
+    this.raffle.raffleDate = this.convertDate(this.raffle.raffleDate);
+    //La api debe recibir un nombre tambien, por eso es harcodeado...
+    this.raffle.name="SORTEO ACTUAL";
+    this.adminService.addRaffle(this.raffle).subscribe(()=>{
+      alert("Imagenes y fechas agregadas correctamente");
+    },err=>{
+      if(err.status == 400)
+        alert("Ya existen imagenes para el sorteo");
+      else
+        alert("Ocurrio un error...")
+    })
+  }
+
+  convertDate(date: string): string | null {
+    const [day, month, year] = date.split('/');
+    const formattedDate = `${year}-${month}-${day}`;
+    return this.datePipe.transform(formattedDate, 'yyyy/MM/dd');
   }
 }
