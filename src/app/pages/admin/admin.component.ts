@@ -9,6 +9,8 @@ import { FormsModule } from '@angular/forms';
 import { UserServiceService } from '../../services/user-service.service';
 import { CommonModule, DatePipe } from '@angular/common';
 
+import { parse, format } from 'date-fns';
+
 @Component({
   selector: 'app-admin',
   standalone: true,
@@ -37,23 +39,26 @@ export class AdminComponent {
   }
 
   submitForm() {
-    //Se convierte la fecha a formato YYYY/MM/DD, por como la recibe el backend.
-    this.raffle.raffleDate = this.convertDate(this.raffle.raffleDate);
-    //La api debe recibir un nombre tambien, por eso es harcodeado...
-    this.raffle.name="SORTEO ACTUAL";
-    this.adminService.addRaffle(this.raffle).subscribe(()=>{
-      alert("Imagenes y fechas agregadas correctamente");
-    },err=>{
-      if(err.status == 400)
-        alert("Ya existen imagenes para el sorteo");
+    // La API debe recibir un nombre también, por eso es hardcodeado
+    this.raffle.name = "SORTEO ACTUAL";
+
+    if(this.raffle.urlImage1 === '' || this.raffle.urlImage2 === ''
+       ||this.raffle.urlImage3 === '' || this.raffle.raffleDate === ''){
+        alert("Debes ingresar todos los campos");
+        return;
+    }
+    this.adminService.addRaffle(this.raffle).subscribe(() => {
+      alert("Imágenes y fechas agregadas correctamente");
+    }, err => {
+      if (err.status === 400)
+        alert("Ya existen imágenes para el sorteo");
       else
-        alert("Ocurrio un error...")
-    })
+        alert("Ocurrió un error...");
+    });
   }
 
-  convertDate(date: string): string | null {
-    const [day, month, year] = date.split('/');
-    const formattedDate = `${year}-${month}-${day}`;
-    return this.datePipe.transform(formattedDate, 'yyyy/MM/dd');
-  }
+  // convertToDateTimeLocal(date: string): string {
+  //   const parsedDate = parse(date, 'dd-MM-yyyy HH:mm:ss', new Date());
+  //   return format(parsedDate, "yyyy-MM-dd'T'HH:mm:ss");
+  // }
 }

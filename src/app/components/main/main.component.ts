@@ -23,7 +23,13 @@ export class MainComponent {
   responseStatus: any;
   responseGetRaffle: string;
 
-  raffle: Raffle = new Raffle();
+  raffle: Raffle;
+
+  ngOnInit():void{
+    this.userService.getRaffle().subscribe((raffle:Raffle)=>{
+      this.raffle = raffle;
+    })
+  }
 
   scrollDown() {
     const element = document.querySelector('h3');

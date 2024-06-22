@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FechaService } from '../../services/fecha.service';
 import { Subscription } from 'rxjs';
+import { UserServiceService } from '../../services/user-service.service';
+import { Raffle } from '../../model/raffle';
 
 @Component({
   selector: 'app-reverse-counter',
@@ -9,13 +11,17 @@ import { Subscription } from 'rxjs';
 })
 export class ContadorReversaComponent implements OnInit {
   fechaObjetivo: Date = new Date('2024-06-23T18:00:00');
+  //fechaObjetivo: Date;
   tiempoRestante: any = {};
 
   private fechaSubscription: Subscription;
 
-  constructor(private fechaService: FechaService) {}
+  constructor(private fechaService: FechaService, private userService:UserServiceService) {}
 
   ngOnInit(): void {
+    // this.userService.getRaffle().subscribe((raffle:Raffle)=>{
+    //   this.fechaObjetivo = new Date(raffle.raffleDate);
+    // })
     this.fechaSubscription = this.fechaService.fechaObjetivo$.subscribe(
       (nuevaFecha) => {
         this.fechaObjetivo = nuevaFecha;

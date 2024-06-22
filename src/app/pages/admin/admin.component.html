@@ -28,10 +28,10 @@
         [(ngModel)]="raffle.urlImage3"
       />
       <input
-        type="date"
+        type="datetime-local"
         id="fecha-nueva"
         name="fecha-nueva"
-        placeholder="fecha"
+        placeholder="fecha" required
         [(ngModel)]="raffle.raffleDate"
       />
       <button type="submit" (click)="submitForm()">Aceptar</button>
