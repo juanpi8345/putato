@@ -3,38 +3,52 @@
 
   <div>
     <form class="renderizar">
-      <input
-        type="url"
-        id="foto-nueva"
-        name="foto-nueva"
-        placeholder="foto"
-        required
-        [(ngModel)]="raffle.urlImage1"
-      />
-      <input
-        type="url"
-        id="foto-nueva"
-        name="foto-nueva"
-        placeholder="foto"
-        required
-        [(ngModel)]="raffle.urlImage2"
-      />
-      <input
-        type="url"
-        id="foto-nueva"
-        name="foto-nueva"
-        placeholder="foto"
-        required
-        [(ngModel)]="raffle.urlImage3"
-      />
-      <input
-        type="datetime-local"
-        id="fecha-nueva"
-        name="fecha-nueva"
-        placeholder="fecha" required
-        [(ngModel)]="raffle.raffleDate"
-      />
-      <button type="submit" (click)="submitForm()">Aceptar</button>
+      <div class="container">
+        <input
+          type="url"
+          id="foto-nueva"
+          name="foto-nueva"
+          placeholder="foto"
+          required
+          [(ngModel)]="raffle.urlImage1"
+        />
+        <button type="submit">Eliminar</button>
+      </div>
+      <div class="container">
+        <input
+          type="url"
+          id="foto-nueva"
+          name="foto-nueva"
+          placeholder="foto"
+          required
+          [(ngModel)]="raffle.urlImage2"
+        />
+        <button type="submit">Eliminar</button>
+      </div>
+      <div class="container">
+        <input
+          type="url"
+          id="foto-nueva"
+          name="foto-nueva"
+          placeholder="foto"
+          required
+          [(ngModel)]="raffle.urlImage3"
+        />
+        <button type="submit">Eliminar</button>
+      </div>
+        <input
+          type="datetime-local"
+          id="fecha-nueva"
+          name="fecha-nueva"
+          placeholder="fecha" required
+          [(ngModel)]="raffle.raffleDate"
+        />
+<div class="container">
+  <button type="submit" (click)="submitForm()">Aceptar</button>
+  <button type="submit" (click)="submitForm()" class="eliminar">Eliminar sorteo</button>
+</div>
+
     </form>
   </div>
 </section>
+

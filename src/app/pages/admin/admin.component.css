@@ -34,3 +34,14 @@ button {
   border-radius: 10px;
   width: auto;
 }
+button:hover{
+  text-decoration: underline;
+  color: white;
+}
+.container{
+  display: flex;
+  justify-content: space-between;
+}
+.eliminar:hover{
+  color: red;
+}
