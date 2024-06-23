@@ -13,6 +13,7 @@ body {
   margin: 0 auto;
   text-align: center;
   padding: 4rem;
+  max-width: 430px;
 }
 h1 {
   font-weight: normal;
