@@ -34,7 +34,8 @@ main{
   display: flex;
   justify-content: center;
   padding: 0px 50px;
-  padding-bottom: 20px;
+  padding-bottom: 30px;
+  padding-top: 20px;
   width: 80%;
 }
 .chance {
@@ -46,7 +47,7 @@ main{
 }
 
 .chance img {
-  width: 70%;
+  width: 100%;
   padding-bottom: 0px;
 }
 
