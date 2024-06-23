@@ -10,8 +10,8 @@ import { Raffle } from '../../model/raffle';
   styleUrls: ['./contador-reversa.component.css'],
 })
 export class ContadorReversaComponent implements OnInit {
-  fechaObjetivo: Date = new Date('2024-06-23T18:00:00');
-  //fechaObjetivo: Date;
+  //fechaObjetivo: Date = new Date('2024-06-23T18:00:00');
+  fechaObjetivo: Date;
   tiempoRestante: any = {};
 
   private fechaSubscription: Subscription;
@@ -19,9 +19,9 @@ export class ContadorReversaComponent implements OnInit {
   constructor(private fechaService: FechaService, private userService:UserServiceService) {}
 
   ngOnInit(): void {
-    // this.userService.getRaffle().subscribe((raffle:Raffle)=>{
-    //   this.fechaObjetivo = new Date(raffle.raffleDate);
-    // })
+    this.userService.getRaffle().subscribe((raffle:Raffle)=>{
+      this.fechaObjetivo = new Date(raffle.raffleDate);
+    })
     this.fechaSubscription = this.fechaService.fechaObjetivo$.subscribe(
       (nuevaFecha) => {
         this.fechaObjetivo = nuevaFecha;
