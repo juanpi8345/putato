@@ -21,33 +21,25 @@
   <div class="chances">
     <div class="chance" (click)="selectOne()">
       <img src="../../../assets/img/1Chance.png" alt="" />
-      <h3 [ngStyle]="{
-          '-webkit-text-stroke': '1px black',
-          'font-size': '4rem'
-        }">
+      <h3>
         $499
       </h3>
     </div>
       
     <div class="chance" (click)="selectThree()">
       <img src="../../../assets/img/3Chances.png" alt="" />
-
       <h3 id="importante">$999</h3>
     </div>
     <div class="chance" (click)="selectTen()">
       <img src="../../../assets/img/10chances.png" alt="" />
-
       <h3>$2999</h3>
     </div>
   </div>
 </div>
 
   <div class="texto-alias">
-    <p>
-      Si no tenes MercadoPago transferí al
-      <span [ngStyle]="{ 'font-weight': '600' }"> ALIAS "Putato"</span> y ya
-      estás participando!
-    </p>
+      <p class="btn">Si no tenes Mercado Pago transferí al <span>alias PUTATO</span> y ya estas participando!</p>
   </div>
+  
   <app-reverse-counter></app-reverse-counter>
 </main>

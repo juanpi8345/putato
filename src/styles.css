@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 * {
   margin: 0px;
   padding: 0px;
@@ -13,33 +17,26 @@ html {
   font-style: normal;
   width: 100vw;
 }
-
+.bg-black {
+  background-color: black;
+}
+.hover-bg-black:hover {
+  background-color: #333333; 
+}
 .landing {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-/* 
-header {
-  padding: 1rem 2rem;
-  padding-right: 1rem;
-  /* border-bottom: 1px solid black; */
-/* box-shadow: rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.07) 0px 16px 16px; 
-  align-items: center;
-  display: flex;
-  justify-content: space-between;
-} */
 
 nav {
   display: flex;
   visibility: hidden;
-  /* flex-direction: column; */
 }
 
 ul {
   display: flex;
-  /* flex-direction: column; */
 }
 
 li {
@@ -53,26 +50,17 @@ li {
 h2 {
   text-align: center;
   font-size: 3.7rem;
-  text-shadow: 2px 4px 4px rgba(0, 0, 0, 0.2),
-    0px -5px 10px rgba(255, 255, 255, 0.15);
   color: #191800;
-  padding-right: 7%;
 }
 
 h3 {
   font-size: 3.5rem;
   font-weight: 600;
   text-align: center;
-  /* position: sticky;
-  top: 80px;
-  z-index: 1000;
-  background-color: rgba(255, 236, 36, 0.5); */
   color: black;
   text-transform: uppercase;
   font-weight: 600;
   letter-spacing: 0.125rem;
-
-  /* margin-bottom: 20px; */
 }
 h4 {
   font-size: 3.6rem;
