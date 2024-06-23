@@ -9,7 +9,7 @@ main{
 }
 .landing img:hover {
   cursor: pointer;
-  box-shadow: rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.07) 0px 16px 16px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   box-shadow: 1cap;
 }
 .landing p {
@@ -64,7 +64,7 @@ main{
   padding-top: 0px;
 }
 .chance:hover {
-  box-shadow: rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.07) 0px 16px 16px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   box-shadow: 1cap;
 }
 h1 {
