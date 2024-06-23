@@ -10,6 +10,8 @@ import { UserServiceService } from '../../services/user-service.service';
 import { CommonModule, DatePipe } from '@angular/common';
 
 import { parse, format } from 'date-fns';
+import { LoginService } from '../../services/login.service';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-admin',
@@ -28,9 +30,8 @@ export class AdminComponent {
   raffle: Raffle = new Raffle();
   constructor(
     private adminService: AdminService,
-    private userService: UserServiceService,
-    private fechaService: FechaService,
-    private datePipe: DatePipe
+    private loginService:LoginService,
+    private router:Router
   ) {}
 
 
@@ -48,17 +49,24 @@ export class AdminComponent {
         return;
     }
     this.adminService.addRaffle(this.raffle).subscribe(() => {
-      alert("Imágenes y fechas agregadas correctamente");
+      alert("Sorteo agregado correctamente");
     }, err => {
       if (err.status === 400)
-        alert("Ya existen imágenes para el sorteo");
+        alert("Ya existen un sorteo activo");
       else
         alert("Ocurrió un error...");
     });
   }
 
-  // convertToDateTimeLocal(date: string): string {
-  //   const parsedDate = parse(date, 'dd-MM-yyyy HH:mm:ss', new Date());
-  //   return format(parsedDate, "yyyy-MM-dd'T'HH:mm:ss");
-  // }
+  deleteRaffle(){
+    this.adminService.deleteRaffle().subscribe(()=>{
+      alert("Sorteo eliminado con exito");
+    },err=>{alert("No hay un sorteo activo")});
+
+  }
+
+  logout(){
+    this.loginService.logout();
+    this.router.navigate(['home']);
+  }
 }

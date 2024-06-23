@@ -16,7 +16,7 @@ import { Router } from '@angular/router';
 export class LoginComponent {
   adminLogin: AdminLogin = new AdminLogin();
 
-  constructor(private loginService: LoginService, private router: Router) {}
+  constructor(private loginService: LoginService, private router: Router) { }
 
   ngOnInit() {
     console.log(this.loginService.isLoggedIn());
@@ -28,6 +28,6 @@ export class LoginComponent {
       .subscribe((adminLogin: AdminLogin) => {
         this.loginService.setAdmin(adminLogin);
         this.router.navigate(['/admin']);
-      });
+      },err=>{alert("Credenciales incorrectas")});
   }
 }
