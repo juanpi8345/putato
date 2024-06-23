@@ -75,6 +75,9 @@ h1 {
   font-size: 4.4rem;
 }
 
+.texto-alias{
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
 .texto-alias p {
   font-size: 1.5rem;
 }
