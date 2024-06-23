@@ -10,40 +10,37 @@
   text-align: center;
   font-size: 15px;
 }
-.landing img {
-  width: 250px;
+.landing div{
+    width: 33%;
 }
-#todoJunto {
-  width: 500px;
+.landing div img{
+  width: 100%;
+  object-fit: cover;
 }
 .bigger {
   font-size: 4.2rem;
 }
-.heroe {
+.container{
   display: flex;
   justify-content: center;
-  align-items: center;
-}
-#profile_picture {
-  width: 30%;
-  padding-bottom: 0px;
 }
 .chances {
   display: flex;
   justify-content: center;
   padding: 0px 50px;
   padding-bottom: 20px;
+  width: 80%;
 }
-
 .chance {
   padding: 5px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 33%;
 }
 
 .chance img {
-  width: 20rem;
+  width: 100%;
   padding-bottom: 0px;
 }
 
@@ -89,80 +86,19 @@ h1 {
   padding-left: 6%;
   padding-right: 6%;
 }
-.todoJunto {
-  width: 450px;
-}
-/* @media (max-width: 425px) {
-  #todoJunto {
-    width: 200px;
-  }
-  .landing {
-    padding: 10px;
-  }
-  .noshow {
-    display: none;
-  }
-  .chances {
-    padding: 10px;
-  }
-  .chance img {
-    width: 120px;
-    padding: 0px;
-  }
-  .chance {
-    padding: 0px;
-  }
-  .chance h3 {
-    padding: 0px;
-  }
-  h3 {
-    padding-left: 0px;
-    margin-bottom: 0px;
-    font-size: 2rem;
-  }
-  main {
-    display: flex;
-    flex-direction: column;
-  }
-  .icons {
-    padding: 0px;
-  }
-  input {
-    padding: 0px;
-  }
-  p {
-    padding: 1%;
-    font-size: 1.5rem;
-    text-align: center;
-  }
-  form {
-    display: flex;
-  }
-} */
-@media (max-width: 1000px) {
-  #todoJunto {
-    width: 100%;
-  }
-}
+
+
 @media (max-width: 837px) {
-  .landing img {
-    width: 210px;
-  }
+
   .icons {
     font-size: 2.2rem;
   }
 }
 
-@media (max-width: 745px) {
-  .landing img {
-    width: 150px;
-  }
-}
+
 
 @media (max-width: 640px) {
-  .noshow {
-    display: none;
-  }
+
   .landing {
     padding: 10px;
   }
@@ -178,45 +114,15 @@ h1 {
   }
 }
 @media (max-width: 507px) {
-  .chance img {
-    width: 18rem;
-  }
+
   h4 {
     font-size: 3rem;
   }
 }
 @media (max-width: 460px) {
-  .chance img {
-    width: 17rem;
-  }
-  #todoJunto {
-    width: 300px;
-  }
+
   h4 {
     font-size: 3rem;
   }
 }
-@media (max-width: 432px) {
-  .chance img {
-    width: 16.5rem;
-  }
-}
-/* @media (max-width: 423px) {
-  .noshow {
-    display: none;
-  }
-  .chance img {
-    width: 16rem;
-  }
-}
-@media (max-width: 429px) {
-  #todoJunto {
-    padding: 5%;
-  }
-  form {
-    display: flex;
-  }
-  p {
-    padding-bottom: 60px;
-  }
-} */
+
