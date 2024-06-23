@@ -80,6 +80,7 @@ h1 {
 }
 .texto-alias p {
   font-size: 1.5rem;
+  text-transform: uppercase;
 }
 
 .btn {
