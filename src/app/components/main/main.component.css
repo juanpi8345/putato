@@ -49,6 +49,8 @@ main{
 .chance img {
   width: 100%;
   padding-bottom: 0px;
+  max-width: 300px;
+  min-width: none;
 }
 
 .chance img:hover {
@@ -57,10 +59,9 @@ main{
 .chance h3 {
   text-align: center;
   font-weight: bold;
-  font-size: x-large;
   color: white;
   -webkit-text-stroke: 1px black;
-  font-size: 4rem;
+  font-size: 6vw;
   color: black;
   padding-top: 0px;
 }
@@ -73,19 +74,19 @@ h1 {
   text-align: center;
 }
 #importante {
-  font-size: 4.4rem;
+  font-size: 6.4vw;
 }
 
 .texto-alias{
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 .texto-alias p {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   text-transform: uppercase;
 }
 
 .btn {
-  padding: 1em 1.5em;
+  padding: .5em;
   text-decoration: none;
 }
 
