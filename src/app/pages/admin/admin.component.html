@@ -1,29 +1,55 @@
+
 <section class="admin-page fadeIn">
   <h3>ADMINISTRADOR</h3>
 
   <div>
     <form class="renderizar">
-      <div class="container">
-        <input type="url" id="foto-nueva" name="foto-nueva" placeholder="foto" required
-          [(ngModel)]="raffle.urlImage1" />
-      </div>
-      <div class="container">
-        <input type="url" id="foto-nueva" name="foto-nueva" placeholder="foto" required
-          [(ngModel)]="raffle.urlImage2" />
-      </div>
-      <div class="container">
-        <input type="url" id="foto-nueva" name="foto-nueva" placeholder="foto" required
-          [(ngModel)]="raffle.urlImage3" />
-      </div>
-      <div class="container">
-        <input type="datetime-local" id="fecha-nueva" name="fecha-nueva" placeholder="fecha" required
-        [(ngModel)]="raffle.raffleDate" />
-      </div>
-      <div class="container">
+        <div class="wrapper">
+            <label>URL de imagenes</label>
+            <div class="container">
+              <input type="url" id="foto-nueva" name="foto-nueva" placeholder="foto" required
+                [(ngModel)]="raffle.urlImage1" />
+            </div>
+            <div class="container">
+              <input type="url" id="foto-nueva" name="foto-nueva" placeholder="foto" required
+                [(ngModel)]="raffle.urlImage2" />
+            </div>
+            <div class="container">
+              <input type="url" id="foto-nueva" name="foto-nueva" placeholder="foto" required
+                [(ngModel)]="raffle.urlImage3" />
+            </div>
+        </div>
+
+        <div class="wrapper">
+            <label>Fecha y Hora</label>
+            <div class="container">
+              <input type="datetime-local" id="fecha-nueva" name="fecha-nueva" placeholder="fecha" required
+              [(ngModel)]="raffle.raffleDate" />
+            </div>
+        </div>
+
+        <div class="wrapper">
+            <label>Mercado Pago</label>
+            <div class="container">
+                <input type="number" placeholder="precio"/>
+                <input type="number" placeholder="precio"/>
+                <input type="number" placeholder="precio"/>
+                <input type="string" placeholder="link de mp"/>
+                <input type="string" placeholder="link de mp"/>
+                <input type="string" placeholder="link de mp"/>
+              </div>
+        </div>
+      
+      <div class="wrapper">
         <button type="submit" (click)="submitForm()">Agregar</button>
         <button (click)="deleteRaffle()" class="eliminar">Eliminar sorteo</button>
       </div>
     </form>
   </div>
-  <button (click)="logout()" >Log Out</button>
 </section>
+<footer>
+  <p *ngIf="message">{{ message }}</p>
+  <div class="contenedor-footer">
+        <button (click)="logout()">Cerrar sesión</button>
+  </div>
+</footer>

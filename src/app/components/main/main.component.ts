@@ -22,12 +22,11 @@ export class MainComponent {
   message: string;
   responseStatus: any;
   responseGetRaffle: string;
-
   raffle: Raffle;
 
   ngOnInit():void{
     this.userService.getRaffle().subscribe((raffle:Raffle)=>{
-      this.raffle = raffle;
+      this.raffle = raffle;      
     })
   }
 
