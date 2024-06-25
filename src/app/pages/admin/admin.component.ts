@@ -28,12 +28,12 @@ export class AdminComponent {
 
   constructor(
     private adminService: AdminService,
-    private loginService:LoginService,
-    private router:Router
-  ) {}
+    private loginService: LoginService,
+    private router: Router
+  ) { }
 
 
-  ngOnInit(){
+  ngOnInit() {
 
   }
 
@@ -43,7 +43,7 @@ export class AdminComponent {
     const driveSuffix = '/view?usp=sharing';
     const transformedPrefix = 'https://drive.google.com/uc?export=view&id=';
 
-  
+
     if (url.startsWith(transformedPrefix)) {
       console.log("Already a transformed Drive URL, returning original:", url);
       return url;
@@ -63,9 +63,11 @@ export class AdminComponent {
   submitForm() {
 
     this.raffle.name = "SORTEO ACTUAL";
-  
-    if (this.raffle.urlImage1 === '' || this.raffle.urlImage2 === '' || this.raffle.urlImage3 === '' || this.raffle.raffleDate === '') {
-      this.message="Debes ingresar todos los campos";
+
+    if (this.raffle.urlImage1 === '' || this.raffle.urlImage2 === '' || this.raffle.urlImage3 === '' || this.raffle.raffleDate === ''
+      || this.raffle.price10Chance == null ||this.raffle.price1Chance == null ||this.raffle.price3Chance == null || this.raffle.urlMp10Chance === ''
+      || this.raffle.urlMp3Chance === '' || this.raffle.urlMp10Chance === '' ) {
+      this.message = "Debes ingresar todos los campos";
       return;
     }
     console.log("Before transformation:", this.raffle.urlImage1, this.raffle.urlImage2, this.raffle.urlImage3);
@@ -73,36 +75,35 @@ export class AdminComponent {
     this.raffle.urlImage1 = this.transformDriveUrl(this.raffle.urlImage1);
     this.raffle.urlImage2 = this.transformDriveUrl(this.raffle.urlImage2);
     this.raffle.urlImage3 = this.transformDriveUrl(this.raffle.urlImage3);
-    
+
     console.log("After transformation:", this.raffle.urlImage1, this.raffle.urlImage2, this.raffle.urlImage3);
 
     this.adminService.addRaffle(this.raffle).subscribe(() => {
-/*      alert("Sorteo agregado correctamente");*/
+      /*      alert("Sorteo agregado correctamente");*/
       this.message = "Sorteo agregado correctamente!";
     }, err => {
       if (err.status === 400)
-/*        alert("Ya existe un sorteo activo");*/
-      this.message = "Ya existe un sorteo activo.";
+        /*        alert("Ya existe un sorteo activo");*/
+        this.message = "Ya existe un sorteo activo.";
 
       else
-/*        alert("Ocurrió un error...");*/
-this.message = "Ocurrió un error...";
-
+        /*        alert("Ocurrió un error...");*/
+        this.message = "Ocurrió un error...";
     });
   }
 
-  deleteRaffle(){
-    this.adminService.deleteRaffle().subscribe(()=>{
-/*      alert("Sorteo eliminado con exito");*/
-this.message= "Sorteo eliminado con exito";
-    },err=>{
-/*      alert("No hay un sorteo activo")*/
-this.message= "Hola! No hay un sorteo activo.";
+  deleteRaffle() {
+    this.adminService.deleteRaffle().subscribe(() => {
+      /*      alert("Sorteo eliminado con exito");*/
+      this.message = "Sorteo eliminado con exito";
+    }, err => {
+      /*      alert("No hay un sorteo activo")*/
+      this.message = "Hola! No hay un sorteo activo.";
     });
 
   }
 
-  logout(){
+  logout() {
     this.loginService.logout();
     this.router.navigate(['home']);
   }
