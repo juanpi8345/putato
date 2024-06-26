@@ -37,25 +37,22 @@ export class AdminComponent {
 
   }
 
-
-
   submitForm() {
 
     this.raffle.name = "SORTEO ACTUAL";
   
     if (this.raffle.urlImage1 === '' || this.raffle.urlImage2 === '' || this.raffle.urlImage3 === '' || this.raffle.raffleDate === '') {
-      this.message="Debes ingresar todos los campos";
+      this.message="Hola! Debes ingresar todos los campos";
       return;
     }
+
     this.adminService.addRaffle(this.raffle).subscribe(() => {
       this.message = "Sorteo agregado correctamente!";
     }, err => {
-      if (err.status === 400)
-      this.message = "Ya existe un sorteo activo.";
-
-      else
-this.message = "Ocurrió un error...";
-
+      if (err.status === 400){
+        this.message = "Ya existe un sorteo activo.";
+      }
+      else{this.message = "Ocurrió un error..."};
     });
   }
 

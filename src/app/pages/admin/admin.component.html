@@ -41,12 +41,14 @@
               </div>
         </div>
       
-        <div class="wrapper buttonwrapper">
-                <p *ngIf="message">{{ message }}</p>
-                <button type="submit" (click)="submitForm()">Agregar</button>
-                <button (click)="deleteRaffle()" class="eliminar">Eliminar</button>
-        </div>
     </form>
+    <section class="below">
+        <p *ngIf="message">{{ message }}</p>
+        <div class="wrapper buttonwrapper">
+            <button type="submit" (click)="submitForm()">Agregar</button>
+            <button (click)="deleteRaffle()" class="eliminar">Eliminar</button>
+        </div>
+    </section>
   </div>
 </section>
 <footer>
