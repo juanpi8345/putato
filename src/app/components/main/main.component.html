@@ -1,9 +1,5 @@
 <main class="fadeIn">
   <section class="landing">
-
-    <p *ngIf="raffle.urlImage1">{{ "Hola" }}</p>
-
-
     <div class="item">
       <img [src]="raffle.urlImage1"
        alt="" (click)="scrollDown()">
@@ -13,15 +9,11 @@
       <img [src]="raffle.urlImage2"
        alt="" (click)="scrollDown()">
     </div>
-
     <div class="item">
       <img [src]="raffle.urlImage3"
        alt=""(click)="scrollDown()">
     </div>
-    
   </section>
-
-
   <h3>Compra Chances</h3>
 
   <div class="container">
@@ -30,17 +22,17 @@
     <div class="chance" (click)="selectOne()">
       <img src="../../../assets/img/1Chance.png" alt="" />
       <h3>
-        $499
+        ${{raffle.price1Chance}}
       </h3>
     </div>
       
     <div class="chance" (click)="selectThree()">
       <img src="../../../assets/img/3Chances.png" alt="" />
-      <h3 id="importante">$999</h3>
+      <h3 id="importante">${{raffle.price3Chance}}</h3>
     </div>
     <div class="chance" (click)="selectTen()">
       <img src="../../../assets/img/10chances.png" alt="" />
-      <h3>$2999</h3>
+      <h3>${{raffle.price10Chance}}</h3>
     </div>
   </div>
 </div>
@@ -48,6 +40,6 @@
   <div class="texto-alias">
       <p class="btn">Si no tenes Mercado Pago transferí al <span>alias PUTATO</span> y ya estas participando!</p>
   </div>
-  
+
   <app-reverse-counter></app-reverse-counter>
 </main>

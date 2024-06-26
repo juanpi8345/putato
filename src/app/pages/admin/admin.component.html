@@ -28,16 +28,15 @@
               [(ngModel)]="raffle.raffleDate" />
             </div>
         </div>
-
         <div class="wrapper">
             <label>Mercado Pago</label>
             <div class="container">
-                <input type="number" placeholder="precio mas bajo"/>
-                <input type="number" placeholder="precio intermedio"/>
-                <input type="number" placeholder="precio mas alto"/>
-                <input type="string" placeholder="link de pago mas bajo"/>
-                <input type="string" placeholder="link de pago intermedio"/>
-                <input type="string" placeholder="link de pago mas alto"/>
+                <input type="number" placeholder="precio mas bajo" name="price1" [(ngModel)]="raffle.price1Chance"/>
+                <input type="number" placeholder="precio intermedio" name="price3" [(ngModel)]="raffle.price3Chance"/>
+                <input type="number" placeholder="precio mas alto" name="price10" [(ngModel)]="raffle.price10Chance"/>
+                <input type="string" placeholder="link de pago mas bajo" name="mp1" [(ngModel)]="raffle.urlMp1Chance"/>
+                <input type="string" placeholder="link de pago intermedio" name="mp3" [(ngModel)]="raffle.urlMp3Chance" />
+                <input type="string" placeholder="link de pago mas alto" name="mp10" [(ngModel)]="raffle.urlMp10Chance"/>
               </div>
         </div>
       

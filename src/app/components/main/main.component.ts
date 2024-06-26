@@ -42,12 +42,12 @@ export class MainComponent {
   }
 
   selectOne() {
-    window.open('https://mpago.la/1Euh7da');
+    window.open(`${this.raffle.urlMp1Chance}`);
   }
   selectThree() {
-    window.open('https://mpago.la/1XG65p3');
+    window.open(`${this.raffle.urlMp3Chance}`);
   }
   selectTen() {
-    window.open('https://mpago.la/1KuLfuZ');
+    window.open(`${this.raffle.urlMp10Chance}`);
   }
 }
