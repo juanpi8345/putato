@@ -2,20 +2,21 @@
 <section class="admin-page fadeIn">
   <h3>ADMINISTRADOR</h3>
 
-  <div>
+  <div class="formcontainer">
     <form class="renderizar">
+
         <div class="wrapper">
             <label>URL de imagenes</label>
             <div class="container">
-              <input type="url" id="foto-nueva" name="foto-nueva" placeholder="foto" required
+              <input type="url" id="foto-nueva" name="foto-nueva" placeholder="foto 1" required
                 [(ngModel)]="raffle.urlImage1" />
             </div>
             <div class="container">
-              <input type="url" id="foto-nueva" name="foto-nueva" placeholder="foto" required
+              <input type="url" id="foto-nueva" name="foto-nueva" placeholder="foto central" required
                 [(ngModel)]="raffle.urlImage2" />
             </div>
             <div class="container">
-              <input type="url" id="foto-nueva" name="foto-nueva" placeholder="foto" required
+              <input type="url" id="foto-nueva" name="foto-nueva" placeholder="foto 3" required
                 [(ngModel)]="raffle.urlImage3" />
             </div>
         </div>
@@ -31,24 +32,24 @@
         <div class="wrapper">
             <label>Mercado Pago</label>
             <div class="container">
-                <input type="number" placeholder="precio"/>
-                <input type="number" placeholder="precio"/>
-                <input type="number" placeholder="precio"/>
-                <input type="string" placeholder="link de mp"/>
-                <input type="string" placeholder="link de mp"/>
-                <input type="string" placeholder="link de mp"/>
+                <input type="number" placeholder="precio mas bajo"/>
+                <input type="number" placeholder="precio intermedio"/>
+                <input type="number" placeholder="precio mas alto"/>
+                <input type="string" placeholder="link de pago mas bajo"/>
+                <input type="string" placeholder="link de pago intermedio"/>
+                <input type="string" placeholder="link de pago mas alto"/>
               </div>
         </div>
       
-      <div class="wrapper">
-        <button type="submit" (click)="submitForm()">Agregar</button>
-        <button (click)="deleteRaffle()" class="eliminar">Eliminar sorteo</button>
-      </div>
+        <div class="wrapper buttonwrapper">
+                <p *ngIf="message">{{ message }}</p>
+                <button type="submit" (click)="submitForm()">Agregar</button>
+                <button (click)="deleteRaffle()" class="eliminar">Eliminar</button>
+        </div>
     </form>
   </div>
 </section>
 <footer>
-  <p *ngIf="message">{{ message }}</p>
   <div class="contenedor-footer">
         <button (click)="logout()">Cerrar sesión</button>
   </div>
