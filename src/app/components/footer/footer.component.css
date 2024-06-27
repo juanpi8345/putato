@@ -56,3 +56,9 @@ button:hover{
 p{
   padding-bottom: 1rem;
 }
+/*media querie para 612 px de pantalla para poner footer con mejor formato*/
+@media (max-width: 612px) {
+  button{
+    margin-top: 10px;
+  }
+}
