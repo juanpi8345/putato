@@ -46,7 +46,7 @@ button:hover{
 }
 
 .footertext {
-  font-size: 1.5rem;
+  font-size: 1.5em;
   text-transform: uppercase;
   text-align: left;
   padding-top: 2%;
@@ -54,6 +54,5 @@ button:hover{
 }
 
 p{
-  font-size: 1.5rem;
   padding-bottom: 1rem;
 }
