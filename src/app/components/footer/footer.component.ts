@@ -16,25 +16,25 @@ export class FooterComponent {
   responseStatus: any;
 
   register(): void {
-    if (
-      this.usuarioRegister.email.length > 0 &&
-      this.usuarioRegister.instagram.length > 0
-    ) {
-      this.userService.register(this.usuarioRegister).subscribe(
-        (response) => {
-          this.responseStatus = 'TE REGISTRASTE!!';
-          this.usuarioRegister.email = '';
-          this.usuarioRegister.instagram = '';
-        },
-        (err) => {
-          this.responseStatus = err.status;
-          if (err.status == 400) {
-            this.responseStatus = 'YA ESTAS REGISTRADO!';
-          }
-        }
-      );
-    } else {
-      this.responseStatus = 'Completa los campos antes de registrarte';
-    }
+    // if (
+    //   this.usuarioRegister.email.length > 0 &&
+    //   this.usuarioRegister.instagram.length > 0
+    // ) {
+    //   this.userService.register(this.usuarioRegister).subscribe(
+    //     (response) => {
+    this.responseStatus = 'TE REGISTRASTE!!';
+    //       this.usuarioRegister.email = '';
+    //       this.usuarioRegister.instagram = '';
+    //     },
+    //     (err) => {
+    //       this.responseStatus = err.status;
+    //       if (err.status == 400) {
+    //         this.responseStatus = 'YA ESTAS REGISTRADO!';
+    //       }
+    //     }
+    //   );
+    // } else {
+    //   this.responseStatus = 'Completa los campos antes de registrarte';
+    // }
   }
 }

@@ -93,14 +93,16 @@ export class AdminComponent {
   }
 
   deleteRaffle() {
-    this.adminService.deleteRaffle().subscribe(() => {
-      /*      alert("Sorteo eliminado con exito");*/
-      this.message = "Sorteo eliminado con exito";
-    }, err => {
-      /*      alert("No hay un sorteo activo")*/
-      this.message = "Hola! No hay un sorteo activo.";
-    });
-
+    const deleteConfirmed = confirm("¿Estás seguro de que queres eliminar el sorteo actual?");
+    if(deleteConfirmed){
+      this.adminService.deleteRaffle().subscribe(() => {
+        /*      alert("Sorteo eliminado con exito");*/
+        this.message = "Sorteo eliminado con exito";
+      }, err => {
+        /*      alert("No hay un sorteo activo")*/
+        this.message = "Hola! No hay un sorteo activo.";
+      });
+    }
   }
 
   logout() {

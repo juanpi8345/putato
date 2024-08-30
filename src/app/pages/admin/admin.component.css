@@ -54,7 +54,7 @@ label{
   width: 100%;
 }
 .eliminar:hover{
-  color: red;
+  color: rgb(254, 166, 166);
 }
 footer{
   display: flex;
@@ -89,4 +89,9 @@ input::placeholder{
 .below{
   width: 100%;
   display: flex;
+}
+
+.btn-eliminar{
+  background-color: red;
+  color: #fff;
 }
